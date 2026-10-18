@@ -46,3 +46,14 @@ No exact historical dependency lock, run timestamp, model revision, or dataset c
 Saved-artifact regeneration: the team returned a Colab ZIP with timestamp 20261018T145617153386Z. Generated comparison/plot outputs were imported; console evidence is in results/stage3_regeneration.log. This is a CSV/plot regeneration step, not a model rerun or historical environment recovery.
 
 Metric-test evidence: results/stage3_metric_tests.log records six passing tests on commit baae1a5b56c587c76fccc9ebc65e4e33c96d7824 in a fresh Colab session. Test-only versions are in requirements.metric-tests.txt; these are not historical inference-environment pins.
+
+## Stage 4 computational analysis
+
+Branch: feat/computational-analysis-experiment, created from main at 564b81ff1f66ef8bde15370414cf773e545bde07.
+
+- experiment/legacy/: original teammate ZIP and extracted files preserved unchanged. Its README records the archive checksum, missing sample image/log, and limits of the supplied metadata. These are inherited team results, not newly executed evidence.
+- experiment/common.py, benchmark_stage4.py, analyze_stage4.py, tests/test_stage4_analysis.py and notebooks/stage4_computational_analysis.ipynb: new AI-assisted Stage 4 implementation prepared with Codex. Not executed locally; Colab syntax checks, tests and pilot must pass before result acceptance.
+- The new notebook captures source commit, actual environment, synthetic input checksums, immutable model revisions and raw timing records. Capturing new revisions does not reconstruct those used for inherited accuracy.
+- Historical scene-comparison scripts and outputs remain for traceability; the primary Stage 4 experiment is now Option F. The new uncertainty calculation clusters DA-2K annotations by image instead of resampling individual pairs as independent observations.
+- No changes to src/dav2 model or metric implementations, no training/fine-tuning, no local tests or inference, and no report editing are part of this preparation.
+- Status: new pilot, GPU timing and analysis evidence pending user execution in Colab. Final reviewed outputs will be imported under experiment/reviewed/ with their originating execution commit.

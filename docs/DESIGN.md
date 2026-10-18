@@ -17,7 +17,7 @@ flowchart LR
   IMG["Image<br/>NYU / KITTI / DA-2K / upload"] --> M["Model<br/>V2 S/B/L (V1 for baseline)"]
   M --> D["Relative depth map"]
   D --> AL["Scale + shift alignment"] --> MET["AbsRel / RMSE / delta1"] --> CMP["Table: ours vs paper"]
-  D --> PA["DA-2K pair accuracy<br/>per scene type"] --> EXP["Stage 4: V2 - V1 gain by scene"]
+  D --> PA["DA-2K pair accuracy<br/>per scene type"] --> EXP["Historical V2 - V1 gain by scene"]
   M --> LAT["Latency / params / memory"] --> TR["Accuracy vs latency plot"]
   M --> APP["Streamlit app"]
 ```
@@ -37,4 +37,4 @@ flowchart LR
   - Person C - deployment + experiment: Streamlit app, script 04-06, `EXPERIMENT.md`.
   - Everyone: PROVENANCE rows for their own files; each can explain the whole paper (Stage 2 self-test).
 - **Git:** `main` always runs. One branch per task (`feat/metrics`, `feat/app`), pull request, one teammate reviews.
-- **How this supports Stage 4 and deployment:** scripts 03 and 05 are the experiment; script 04 gives the latency axis; the app reuses `predict()` and the S/B/L selector.
+- **Stage 4:** the current Option F experiment lives in `experiment/` on `feat/computational-analysis-experiment`; use the dedicated Stage 4 notebook. Scripts 03-06 and scene outputs remain historical evidence. Deployment continues to reuse `predict()` and the S/B/L selector.

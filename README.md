@@ -6,6 +6,17 @@ Team: Ayyan Sohail, Omar Khan, Maaz Zubairi.
 **This project uses the authors' pretrained checkpoints (Small / Base / Large). No model is trained.**
 The work is the evaluation pipeline, the metric code, a paper-specific experiment, and a deployed demo.
 
+## Stage 4 experiment branch
+
+**Option F: computational analysis. Branch: `feat/computational-analysis-experiment`.**
+
+Start with the [Stage 4 Colab notebook](https://colab.research.google.com/github/maaz-zubairi/depth-anything-v2-repro/blob/feat/computational-analysis-experiment/notebooks/stage4_computational_analysis.ipynb).
+Choose a T4 GPU and run cells individually through the pilot download, then return
+the pilot ZIP for review. All experiments run in Colab. Source preparation is
+complete; new GPU results and analysis are **pending**, not claimed as executed.
+See [experiment/README.md](experiment/README.md) for the paper-specific question,
+legacy evidence, protocol, limitations, and submission requirements. The older
+`colab_runner.ipynb` is the Stage 3 workflow; do not rerun it for this experiment.
 ## Stage 3 status
 
 The instructor approved the proposal's pretrained-evaluation scope (team confirmation).
@@ -37,7 +48,7 @@ streamlit run app/streamlit_app.py                       # the deployment
 | Dense-depth eval (NYU, KITTI optional) | `python scripts/02_eval_depth.py --dataset nyu --data-root data/nyu --eigen-crop [--limit 10]` | `results/nyu_*.csv` |
 | DA-2K pair accuracy, V1 and V2 | `python scripts/03_eval_da2k.py --data-root data/da2k [--limit 20]` | `results/da2k_pairs.csv` |
 | Latency / params / memory | `python scripts/04_benchmark_latency.py` | `results/latency.csv` |
-| Experiment analysis | `python scripts/05_analyze_da2k.py` | `results/da2k_*.csv`, `figures/da2k_gain_by_scene.png` |
+| Historical scene analysis (not current Stage 4) | `python scripts/05_analyze_da2k.py` | `results/da2k_*.csv`, `figures/da2k_gain_by_scene.png` |
 | Paper-vs-ours + accuracy-vs-latency (saved CSVs only) | `python scripts/06_make_report_tables.py` | `results/paper_vs_ours.csv`, `figures/accuracy_vs_latency.png` |
 
 ## Data setup (data/ is git-ignored)

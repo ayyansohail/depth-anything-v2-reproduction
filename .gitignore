@@ -13,3 +13,6 @@ data/*
 # keep results + figures (they are report evidence)
 !results/*.csv
 !figures/*.png
+
+# Stage 4 runtime outputs are downloaded from Colab, then reviewed before import.
+experiment/runs/

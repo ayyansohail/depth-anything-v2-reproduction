@@ -1,0 +1,9 @@
+# Install in Colab only. Keep Colab's CUDA-enabled torch; do not reinstall it.
+# Capture exact resolved versions before the pilot using benchmark_stage4.py.
+transformers==5.16.1
+huggingface_hub>=0.24
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+pillow>=10.0
+pytest>=7.0
