@@ -11,7 +11,7 @@ No live URL or successful deployment is claimed. The formal report is deferred.
 Open [the Stage 5 verification notebook](https://colab.research.google.com/github/maaz-zubairi/depth-anything-v2-repro/blob/feat/streamlit-deployment/notebooks/stage5_deployment_verification.ipynb).
 Use a fresh CPU runtime with Python 3.13. Execute its cells individually:
 
-1. Clone this branch and create the isolated CPU environment.
+1. Clone this branch and create the isolated CPU environment. If standard venv fails while bootstrapping pip, the notebook preserves that failure and falls back to virtualenv 20.35.4 in a separate workspace directory. The bootstrap tool is installed into a temporary target directory, not the notebook environment.
 2. Parse source and run metric, helper, loader and mocked Streamlit UI tests.
 3. Upload one JPG/PNG suitable for inclusion in coursework evidence.
 4. Verify real predictions using pinned Small, Base, Large, then Small again.

@@ -67,3 +67,5 @@ Branch feat/streamlit-deployment is based on completed Stage 4 commit 5f4c44c4ca
 - app/requirements.txt pins a Linux CPU stack for Python 3.13. New Colab verification uses an isolated environment and captures its actual versions; this does not reconstruct historical accuracy versions.
 - Small remains the only public model until host verification. Base and Large remain target models in the Colab verification, not claims of hosted support.
 - No local Python, tests, dependency installation, training or inference was run during preparation. No formal report was edited. Live URL, deployed commit, verified models and screenshot evidence remain null/pending in app/hosted_acceptance.json until actually checked.
+
+Stage 5 setup correction: the user reported standard venv ensurepip failure in Colab before application dependencies or tests ran. The notebook now preserves the failed environment/log, falls back to workspace-local virtualenv 20.35.4, verifies pip, and records the environment-builder method. This correction changes setup only; no local Python or model execution was performed.
