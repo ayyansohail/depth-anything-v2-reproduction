@@ -22,7 +22,7 @@ outdoor evaluation. Report corrections are in [Stage 3 report notes](docs/STAGE3
 
 ## Quickstart
 ```bash
-git clone https://github.com/maaz-zubairi/depth-anything-v2-repro.git && cd depth-anything-v2-repro
+git clone https://github.com/ayyansohail/depth-anything-v2-reproduction.git && cd depth-anything-v2-reproduction
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt && pip install -e .
 pytest -q                                                # metric unit tests (no GPU, no data needed)

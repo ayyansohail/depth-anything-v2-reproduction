@@ -46,3 +46,5 @@ No exact historical dependency lock, run timestamp, model revision, or dataset c
 Saved-artifact regeneration: the team returned a Colab ZIP with timestamp 20261018T145617153386Z. Generated comparison/plot outputs were imported; console evidence is in results/stage3_regeneration.log. This is a CSV/plot regeneration step, not a model rerun or historical environment recovery.
 
 Metric-test evidence: results/stage3_metric_tests.log records six passing tests on commit baae1a5b56c587c76fccc9ebc65e4e33c96d7824 in a fresh Colab session. Test-only versions are in requirements.metric-tests.txt; these are not historical inference-environment pins.
+
+Repository migration: copied to ayyansohail/depth-anything-v2-reproduction with full original branch histories, author attribution, model licenses and saved evidence retained. Active repository links and notebook clone targets were updated; historical evidence/execution commits were not rewritten. The initialized destination README commit is retained in main. No Python, tests or inference were run locally. See docs/REPOSITORY_MIGRATION.md.
