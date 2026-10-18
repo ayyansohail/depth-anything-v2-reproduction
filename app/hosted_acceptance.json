@@ -1,20 +1,24 @@
 {
-  "status": "small_hosted_smoke_passed_pending_extended_checks",
+  "status": "small_verified_base_host_check_in_progress",
   "public_url": "https://depth-anything-v2-repro.streamlit.app/",
   "deployed_commit": null,
   "host": "Streamlit Community Cloud",
   "python": "3.13",
   "enabled_models": [
-    "v2-small"
+    "v2-small",
+    "v2-base"
   ],
   "host_verified_models": [
     "v2-small"
   ],
   "worked_example": "deployment/reviewed/stage5_verification_20261018T202743076758Z/real_predictions/1_v2-small_input_png.png",
   "screenshot_or_recording": "deployment/hosted/small_initial/small_prediction.jpg",
-  "notes": "Public browser Small smoke passed: successful prediction, colour and 16-bit downloads inspected at 1024x768. Displayed prediction time stayed unchanged through both exact download controls. Initial model preparation 10.94 s and prediction 2.49 s; subsequent observed prediction 2.37 s. Exact deployed commit, extended host checks and Base/Large feasibility remain pending. All inference ran on Community Cloud. An explicit repeated Generate depth request also succeeded in 2.43 s without a model-preparation message; the screenshot captures that repeat. Owner Edge verification: Small predictions 2.46 s and 2.40 s; supplied downloads have matching 1024x768 dimensions, RGB 8-bit colour and grayscale 16-bit depth headers. Extended checks remain pending.",
+  "notes": "Public browser Small smoke passed: successful prediction, colour and 16-bit downloads inspected at 1024x768. Displayed prediction time stayed unchanged through both exact download controls. Initial model preparation 10.94 s and prediction 2.49 s; subsequent observed prediction 2.37 s. Exact deployed commit, extended host checks and Base/Large feasibility remain pending. All inference ran on Community Cloud. An explicit repeated Generate depth request also succeeded in 2.43 s without a model-preparation message; the screenshot captures that repeat. Owner Edge verification: Small predictions 2.46 s and 2.40 s; supplied downloads have matching 1024x768 dimensions, RGB 8-bit colour and grayscale 16-bit depth headers. Extended checks remain pending. Owner confirmed invalid image rejection and successful prediction after replacing it with the original photo. Base is now enabled as a candidate for actual-host testing; its feasibility is not yet verified. Small remains default and Large stays disabled.",
   "colab_evidence": "deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md",
   "colab_execution_commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf",
   "hosted_evidence": "deployment/hosted/small_initial/verification.json",
-  "edge_evidence": "deployment/hosted/edge_small/verification.json"
+  "edge_evidence": "deployment/hosted/edge_small/verification.json",
+  "candidate_models_pending_host_verification": [
+    "v2-base"
+  ]
 }

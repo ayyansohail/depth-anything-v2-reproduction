@@ -76,7 +76,7 @@ before loading another. Only image/output bytes and scalar metadata are stored
 in per-user session state. Model weights can remain in the host's disk cache;
 multiple model instances are not deliberately retained in RAM.
 
-`app/deployment.json` is committed with only `v2-small` enabled. Small remains
+`app/deployment.json` currently enables verified `v2-small` plus candidate `v2-base` for actual-host testing. Large remains disabled. Small remains
 the default. After a successful Small hosted check, the assistant enables Base
 in a reviewed commit, the owner repeats hosted tests, then Large is tried in
 another reviewed commit. A failing candidate is disabled again. CPU out-of-memory

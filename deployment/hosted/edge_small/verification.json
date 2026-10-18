@@ -1,5 +1,5 @@
 {
-  "status": "owner_reported_edge_small_predictions_and_downloads_passed",
+  "status": "owner_reported_edge_small_predictions_downloads_and_error_recovery_passed",
   "public_url": "https://depth-anything-v2-repro.streamlit.app/",
   "browser": "Microsoft Edge",
   "model": "v2-small",
@@ -29,9 +29,11 @@
   "download_no_inference_check": "Not explicitly reported for this Edge run; initial independent hosted smoke check already observed retained timing during downloads.",
   "browser_note": "Owner reported app working on Edge, Safari and Chrome Incognito; regular Chrome profile remained on loading spinner. Owner prefers Edge and no Chrome setting changes.",
   "pending": [
-    "Hosted invalid-upload handling and recovery",
     "Fresh/concurrent-session checks",
     "Exact deployed commit confirmation",
     "Base/Large host feasibility"
-  ]
+  ],
+  "invalid_upload_rejected": true,
+  "invalid_upload_error_owner_report": "The image format is invalid and it could not be read.",
+  "valid_upload_recovery_owner_confirmed": true
 }

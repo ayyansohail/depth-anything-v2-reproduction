@@ -1,10 +1,13 @@
 {
-  "enabled_models": ["v2-small"],
+  "enabled_models": [
+    "v2-small",
+    "v2-base"
+  ],
   "limits": {
     "max_upload_bytes": 10485760,
     "max_pixels": 16000000,
     "max_edge": 1024,
     "max_aspect_ratio": 2.0
   },
-  "status": "Prepared for Colab validation; hosted model verification pending"
+  "status": "Small hosted checks passed; Base enabled temporarily for actual-host verification; Large disabled"
 }

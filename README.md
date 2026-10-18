@@ -13,8 +13,7 @@ The work is the evaluation pipeline, the metric code, a paper-specific experimen
 Colab verification is complete: **24 tests and four real CPU predictions passed**, including Small, Base, Large and switching back to Small. See [reviewed evidence](deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md). The [public Small app](https://depth-anything-v2-repro.streamlit.app/) passed an initial hosted prediction-and-download smoke check; extended hosted acceptance remains pending.
 See [hosted smoke evidence](deployment/hosted/small_initial/verification.json) and [a successful prediction screenshot](deployment/hosted/small_initial/small_prediction.jpg). For reproduction, start with the
 [Stage 5 Colab notebook](https://colab.research.google.com/github/ayyansohail/depth-anything-v2-reproduction/blob/feat/streamlit-deployment/notebooks/stage5_deployment_verification.ipynb),
-then follow [the deployment guide](docs/DEPLOYMENT.md). The initial hosted model
-configuration exposes Small only; Base and Large require host-specific checks.
+then follow [the deployment guide](docs/DEPLOYMENT.md). Small remains the default. Base is temporarily enabled for actual-host verification; Large stays disabled.
 Predictions run only when Generate depth is clicked; downloads retain results.
 Outputs are relative inverse depth, not metres. Report editing remains deferred.
 
