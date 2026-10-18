@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "blocks": 24,
+  "timings": 1200,
+  "bootstrap_replicates": 2000,
+  "seed": 0,
+  "accuracy_kind": "inherited",
+  "timing_kind": "new GPU synthetic forward"
+}

@@ -17,7 +17,7 @@ than training data, and their implementations may behave differently.
 - `legacy/`: teammate's original ZIP and unchanged extracted artifacts. See its README for missing traceability.
 - `../results/nyu_per_image.csv` and `../results/da2k_pairs.csv`: inherited accuracy evidence. No new accuracy run is claimed.
 - `runs/`: fresh Colab runs, ignored by Git until reviewed and explicitly imported into `reviewed/`.
-- New pilot, timings and analysis: **pending user execution in Colab**. Source preparation is not completed experimental evidence.
+- New pilot, timings and analysis: **complete and reviewed**. See [FINDINGS.md](FINDINGS.md) and [the reviewed run](reviewed/stage4_20261018T155835007735Z/REVIEW.md): 22 tests passed, 24 blocks and 1,200 timings validated in Colab.
 
 ## Start in Colab
 
@@ -85,11 +85,11 @@ the exact current revision. This limitation stays visible in generated tables.
 
 ## Completion and submission
 
-Completion requires a successful pilot, full benchmark, passing Colab checks,
+The returned run meets the completion requirements: successful pilot, full benchmark, passing Colab checks,
 validated analysis, and reviewed artifacts committed under `experiment/reviewed/`.
 Keep source and results on this branch for submission. Submit its direct URL:
 https://github.com/maaz-zubairi/depth-anything-v2-repro/tree/feat/computational-analysis-experiment
 
 No local Python, tests, installation or model execution was used to prepare this
-implementation. Colab checks must pass before its outputs are accepted. Report
+implementation. Colab checks passed for the archived execution. Report
 editing and Stage 5 deployment are outside this task.

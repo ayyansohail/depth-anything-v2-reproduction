@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "started_at": "2026-10-18T16:01:01.446646+00:00",
+  "models": [
+    {
+      "model": "v2-small",
+      "input_shape": [
+        1,
+        3,
+        518,
+        686
+      ],
+      "input_sha256": "1e551d415c6af55c4fa77aa712bec9bbb59b2e736e245026756b21d109fd2b27",
+      "output_shape": [
+        1,
+        518,
+        686
+      ],
+      "dtype": "torch.float32",
+      "params_m": 24.785089,
+      "attention_backend": "eager",
+      "revision": "5426e4f0f36572d16453bbda7a8389317b1bef99"
+    },
+    {
+      "model": "v1-small",
+      "input_shape": [
+        1,
+        3,
+        518,
+        686
+      ],
+      "input_sha256": "1e551d415c6af55c4fa77aa712bec9bbb59b2e736e245026756b21d109fd2b27",
+      "output_shape": [
+        1,
+        518,
+        686
+      ],
+      "dtype": "torch.float32",
+      "params_m": 24.785089,
+      "attention_backend": "eager",
+      "revision": "25216a913fa218ccb7d58cce818d52b728b6c1f6"
+    },
+    {
+      "model": "v2-base",
+      "input_shape": [
+        1,
+        3,
+        518,
+        686
+      ],
+      "input_sha256": "1e551d415c6af55c4fa77aa712bec9bbb59b2e736e245026756b21d109fd2b27",
+      "output_shape": [
+        1,
+        518,
+        686
+      ],
+      "dtype": "torch.float32",
+      "params_m": 97.470785,
+      "attention_backend": "eager",
+      "revision": "b1958afc87fb45a9e3746cb387596094de553ed8"
+    },
+    {
+      "model": "v1-base",
+      "input_shape": [
+        1,
+        3,
+        518,
+        686
+      ],
+      "input_sha256": "1e551d415c6af55c4fa77aa712bec9bbb59b2e736e245026756b21d109fd2b27",
+      "output_shape": [
+        1,
+        518,
+        686
+      ],
+      "dtype": "torch.float32",
+      "params_m": 97.470785,
+      "attention_backend": "eager",
+      "revision": "fbce2ff06a429af8a3fdb9296c6a922a37e43482"
+    },
+    {
+      "model": "v2-large",
+      "input_shape": [
+        1,
+        3,
+        518,
+        686
+      ],
+      "input_sha256": "1e551d415c6af55c4fa77aa712bec9bbb59b2e736e245026756b21d109fd2b27",
+      "output_shape": [
+        1,
+        518,
+        686
+      ],
+      "dtype": "torch.float32",
+      "params_m": 335.315649,
+      "attention_backend": "eager",
+      "revision": "7581137eff8d4e94f6e796d3baea0e9fa79b22d2"
+    },
+    {
+      "model": "v1-large",
+      "input_shape": [
+        1,
+        3,
+        518,
+        686
+      ],
+      "input_sha256": "1e551d415c6af55c4fa77aa712bec9bbb59b2e736e245026756b21d109fd2b27",
+      "output_shape": [
+        1,
+        518,
+        686
+      ],
+      "dtype": "torch.float32",
+      "params_m": 335.315649,
+      "attention_backend": "eager",
+      "revision": "27ccb0920352c0c37b3a96441873c8d37bd52fb6"
+    }
+  ],
+  "finished_at": "2026-10-18T16:01:59.282156+00:00"
+}

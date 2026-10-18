@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "run_id": "stage4_20261018T155835007735Z",
+  "captured_at": "2026-10-18T16:00:40.902694+00:00",
+  "source_commit": "0d6a6be3eff111dfa81186a5bebd2327c053a2c0",
+  "source_branch": "feat/computational-analysis-experiment",
+  "config": {
+    "seed": 0,
+    "shape": [
+      1,
+      3,
+      518,
+      686
+    ],
+    "dtype": "float32",
+    "warmup": 10,
+    "iterations": 50,
+    "sweeps": 4,
+    "threads": 1,
+    "tf32": false,
+    "cudnn_benchmark": false,
+    "input_kind": "seeded synthetic standard-normal tensor; not an accuracy image",
+    "measurement": "synchronized host wall-clock; bare forward pass only"
+  },
+  "orders": [
+    [
+      "v2-small",
+      "v1-small",
+      "v2-base",
+      "v1-base",
+      "v2-large",
+      "v1-large"
+    ],
+    [
+      "v1-large",
+      "v2-large",
+      "v1-base",
+      "v2-base",
+      "v1-small",
+      "v2-small"
+    ],
+    [
+      "v1-large",
+      "v2-large",
+      "v1-base",
+      "v2-base",
+      "v1-small",
+      "v2-small"
+    ],
+    [
+      "v2-small",
+      "v1-small",
+      "v2-base",
+      "v1-base",
+      "v2-large",
+      "v1-large"
+    ]
+  ],
+  "runtime": {
+    "hostname": "82f9f9d96c86",
+    "boot_id": "461b0417-e9bf-4187-b7a4-f79f81694c20",
+    "parent_pid": 3388,
+    "python": "3.13.15",
+    "packages": {
+      "torch": "2.11.0+cu130",
+      "transformers": "5.16.1",
+      "huggingface_hub": "1.33.0",
+      "numpy": "2.1.3",
+      "pillow": "11.3.0",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.0",
+      "pytest": "8.4.2"
+    },
+    "gpu": "Tesla T4",
+    "cuda": "13.0",
+    "cudnn": 92700,
+    "threads": 1
+  },
+  "model_ids": {
+    "v2-small": "depth-anything/Depth-Anything-V2-Small-hf",
+    "v1-small": "LiheYoung/depth-anything-small-hf",
+    "v2-base": "depth-anything/Depth-Anything-V2-Base-hf",
+    "v1-base": "LiheYoung/depth-anything-base-hf",
+    "v2-large": "depth-anything/Depth-Anything-V2-Large-hf",
+    "v1-large": "LiheYoung/depth-anything-large-hf"
+  },
+  "model_revisions": {
+    "v2-small": "5426e4f0f36572d16453bbda7a8389317b1bef99",
+    "v1-small": "25216a913fa218ccb7d58cce818d52b728b6c1f6",
+    "v2-base": "b1958afc87fb45a9e3746cb387596094de553ed8",
+    "v1-base": "fbce2ff06a429af8a3fdb9296c6a922a37e43482",
+    "v2-large": "7581137eff8d4e94f6e796d3baea0e9fa79b22d2",
+    "v1-large": "27ccb0920352c0c37b3a96441873c8d37bd52fb6"
+  },
+  "input_hashes": {
+    "results/nyu_per_image.csv": "b0a86fbab358221f3e97cc91cdaacfcdcc7e38dcdbeced3450f60387e8d278b0",
+    "results/nyu_summary.csv": "8bff22695b013d75a52ac79c94b1e725ea8128c4aac9e9ea00a21391502abd1e",
+    "results/da2k_pairs.csv": "f9d865ea29873ae5178484d52002618a62b93e00efa8756503953066372f3920",
+    "experiment/legacy/latency_cpu.csv": "3b36f2524779f67a3a0b832f4a84ed961e24090c6f9a0d0597f7a89f8e639037",
+    "experiment/legacy/latency_cuda.csv": "b2beea694cacff915271fe6de0d6063232cba769ea01d761bd71818fc747d4a4"
+  },
+  "context": "new Stage 4 timing environment, not the historical accuracy environment"
+}

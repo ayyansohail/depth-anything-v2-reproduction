@@ -11,12 +11,11 @@ The work is the evaluation pipeline, the metric code, a paper-specific experimen
 **Option F: computational analysis. Branch: `feat/computational-analysis-experiment`.**
 
 Start with the [Stage 4 Colab notebook](https://colab.research.google.com/github/maaz-zubairi/depth-anything-v2-repro/blob/feat/computational-analysis-experiment/notebooks/stage4_computational_analysis.ipynb).
-Choose a T4 GPU and run cells individually through the pilot download, then return
-the pilot ZIP for review. All experiments run in Colab. Source preparation is
-complete; new GPU results and analysis are **pending**, not claimed as executed.
+The experiment is **complete and reviewed**: 22 tests passed and 24 blocks / 1,200 timings validated in Colab. Read [the findings](experiment/FINDINGS.md) and [reviewed evidence](experiment/reviewed/stage4_20261018T155835007735Z/REVIEW.md). The notebook remains available for reproduction; choose a T4 GPU and follow its staged instructions.
 See [experiment/README.md](experiment/README.md) for the paper-specific question,
 legacy evidence, protocol, limitations, and submission requirements. The older
 `colab_runner.ipynb` is the Stage 3 workflow; do not rerun it for this experiment.
+
 ## Stage 3 status
 
 The instructor approved the proposal's pretrained-evaluation scope (team confirmation).

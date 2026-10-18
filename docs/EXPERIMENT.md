@@ -16,5 +16,5 @@ pair-level bootstrap outputs remain historical supporting artifacts. They are
 not the new experiment's image-cluster uncertainty estimates and are not used
 to claim that the training-data change caused an accuracy improvement.
 
-Status: teammate evidence imported; new pilot/benchmark/analysis awaiting Colab.
+Status: experimental execution and evidence review complete. Colab passed 22 tests and validated 24 blocks / 1,200 timings. See [reviewed findings](../experiment/FINDINGS.md).
 No training, fine-tuning, new accuracy evaluation or CPU rerun is planned.

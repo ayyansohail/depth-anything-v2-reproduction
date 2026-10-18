@@ -1,0 +1,28 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 287/287 [00:00<00:00, 4391.57it/s]
+PILOT PASS v2-small: shape=(1, 518, 686), dtype=torch.float32
+
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 287/287 [00:00<00:00, 5107.89it/s]
+PILOT PASS v1-small: shape=(1, 518, 686), dtype=torch.float32
+
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 287/287 [00:00<00:00, 5119.31it/s]
+PILOT PASS v2-base: shape=(1, 518, 686), dtype=torch.float32
+
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 287/287 [00:00<00:00, 4953.64it/s]
+PILOT PASS v1-base: shape=(1, 518, 686), dtype=torch.float32
+
+Loading weights:   0%|          | 0/503 [00:00<?, ?it/s]
+Loading weights:  97%|█████████▋| 489/503 [00:00<00:00, 4889.49it/s]
+Loading weights: 100%|██████████| 503/503 [00:00<00:00, 4869.96it/s]
+PILOT PASS v2-large: shape=(1, 518, 686), dtype=torch.float32
+
+Loading weights:   0%|          | 0/503 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 503/503 [00:00<00:00, 17334.83it/s]
+PILOT PASS v1-large: shape=(1, 518, 686), dtype=torch.float32
+All six models passed. Download pilot evidence and return it before benchmarking.

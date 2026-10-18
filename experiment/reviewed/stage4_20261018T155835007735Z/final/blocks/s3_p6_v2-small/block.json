@@ -1,0 +1,25 @@
+{
+  "run_id": "stage4_20261018T155835007735Z",
+  "sweep": 3,
+  "position": 6,
+  "model": "v2-small",
+  "shape": [
+    1,
+    3,
+    518,
+    686
+  ],
+  "dtype": "float32",
+  "input_sha256": "1e551d415c6af55c4fa77aa712bec9bbb59b2e736e245026756b21d109fd2b27",
+  "revision": "5426e4f0f36572d16453bbda7a8389317b1bef99",
+  "attention_backend": "eager",
+  "n": 50,
+  "warmup": 10,
+  "mean_ms": 76.79343683998468,
+  "std_ms": 1.3581962228926203,
+  "median_ms": 77.31913599991458,
+  "params_m": 24.785089,
+  "fp32_weights_mib": 94.54761123657227,
+  "peak_allocated_mib": 245.09716796875,
+  "completed_at": "2026-10-18T16:10:21.948194+00:00"
+}
