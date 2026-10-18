@@ -1,6 +1,6 @@
 """Dense-depth evaluation (NYU / KITTI) with the relative-depth protocol.
-Run:  python scripts/02_eval_depth.py --dataset nyu --data-root data/nyu --limit 10     # sanity check
-      python scripts/02_eval_depth.py --dataset nyu --data-root data/nyu                # full 654
+Run:  python scripts/02_eval_depth.py --dataset nyu --data-root data/nyu --eigen-crop --limit 10  # sanity check
+      python scripts/02_eval_depth.py --dataset nyu --data-root data/nyu --eigen-crop             # full 654
 Writes results/<dataset>_per_image.csv and results/<dataset>_summary.csv (long format).
 """
 import argparse, gc

@@ -49,8 +49,34 @@ full run.
 
 The [Depth Anything V2 paper, Table 2](https://proceedings.neurips.cc/paper_files/paper/2024/file/26cfdcd8fe6fd75cc53e92963a656c58-Paper-Conference.pdf)
 reports V2-L on NYU-D as **0.045 AbsRel and 0.979 δ1**. Our Large result is
-about 21.7% higher in AbsRel and 1.81 percentage points lower in δ1. The
+about 21.69% higher in AbsRel and 1.81 percentage points lower in δ1. The
 third-party test file, Hugging Face port, and preprocessing and interpolation
 differences are plausible contributors; their individual effects have not
 been measured. These results should not be presented as an exact replication
 of the authors' evaluation code.
+
+## Scope and paper references
+
+The instructor approved pretrained-checkpoint evaluation instead of training,
+according to the team. This project evaluates released relative-depth models;
+it does not reproduce teacher/student training or evaluate metric-head checkpoints.
+
+Tables 2 and 3 of [the paper's arXiv v2](https://arxiv.org/html/2406.09414v2)
+provide the V2 references in `results/paper_reported.csv`. Paper values in
+percent are converted to fractions. The comparison CSV uses `ours - paper_value`:
+positive AbsRel gaps and negative delta1/accuracy gaps indicate worse local results.
+A gap rounded to zero does not establish identical predictions or protocol parity.
+V1 encoder-specific references remain unverified; see PROVENANCE.md.
+
+RMSE is averaged per image, not computed as a pooled pixel RMSE, and has no
+reference in the relative-depth comparison table. Values from metric-depth
+fine-tuning tables must not be used as references for these relative checkpoints.
+
+NYU's Eigen crop is opt-in in the CLI. README and notebook reproduction commands
+pass `--eigen-crop` explicitly. The DA-2K `--limit` argument selects images, not
+pairs; count the actual evaluated pairs from the resulting CSV.
+
+Historical environment versions, model revisions, and dataset hashes remain
+unarchived. Capture instructions and lightweight validation commands are in
+`docs/COLAB_STAGE3.md`; no fresh inference is needed to regenerate comparison
+artifacts from the saved CSVs.

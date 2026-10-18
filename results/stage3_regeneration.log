@@ -1,0 +1,67 @@
+   model dataset                     metric  paper_value                                                                              paper_source   ours  n_images     gap
+ v1-base    da2k          acc_adverse_style          NaN                                                                                       NaN 0.9360       NaN     NaN
+ v1-base    da2k                 acc_aerial          NaN                                                                                       NaN 0.9639       NaN     NaN
+ v1-base    da2k                 acc_indoor          NaN                                                                                       NaN 0.8500       NaN     NaN
+ v1-base    da2k               acc_non_real          NaN                                                                                       NaN 0.9505       NaN     NaN
+ v1-base    da2k                 acc_object          NaN                                                                                       NaN 0.9459       NaN     NaN
+ v1-base    da2k                acc_outdoor          NaN                                                                                       NaN 0.8924       NaN     NaN
+ v1-base    da2k                acc_overall          NaN                                                                                       NaN 0.8941       NaN     NaN
+ v1-base    da2k acc_transparent_reflective          NaN                                                                                       NaN 0.6916       NaN     NaN
+ v1-base    da2k             acc_underwater          NaN                                                                                       NaN 0.9829       NaN     NaN
+v1-large    da2k          acc_adverse_style          NaN                                                                                       NaN 0.9390       NaN     NaN
+v1-large    da2k                 acc_aerial          NaN                                                                                       NaN 0.9742       NaN     NaN
+v1-large    da2k                 acc_indoor          NaN                                                                                       NaN 0.8119       NaN     NaN
+v1-large    da2k               acc_non_real          NaN                                                                                       NaN 0.9571       NaN     NaN
+v1-large    da2k                 acc_object          NaN                                                                                       NaN 0.9595       NaN     NaN
+v1-large    da2k                acc_outdoor          NaN                                                                                       NaN 0.8895       NaN     NaN
+v1-large    da2k                acc_overall          NaN                                                                                       NaN 0.8926       NaN     NaN
+v1-large    da2k acc_transparent_reflective          NaN                                                                                       NaN 0.7196       NaN     NaN
+v1-large    da2k             acc_underwater          NaN                                                                                       NaN 0.9915       NaN     NaN
+v1-small    da2k          acc_adverse_style          NaN                                                                                       NaN 0.9299       NaN     NaN
+v1-small    da2k                 acc_aerial          NaN                                                                                       NaN 0.9433       NaN     NaN
+v1-small    da2k                 acc_indoor          NaN                                                                                       NaN 0.8262       NaN     NaN
+v1-small    da2k               acc_non_real          NaN                                                                                       NaN 0.9571       NaN     NaN
+v1-small    da2k                 acc_object          NaN                                                                                       NaN 0.9189       NaN     NaN
+v1-small    da2k                acc_outdoor          NaN                                                                                       NaN 0.8837       NaN     NaN
+v1-small    da2k                acc_overall          NaN                                                                                       NaN 0.8883       NaN     NaN
+v1-small    da2k acc_transparent_reflective          NaN                                                                                       NaN 0.7290       NaN     NaN
+v1-small    da2k             acc_underwater          NaN                                                                                       NaN 0.9915       NaN     NaN
+ v2-base    da2k          acc_adverse_style          NaN                                                                                       NaN 0.9695       NaN     NaN
+ v2-base    da2k                 acc_aerial          NaN                                                                                       NaN 0.9948       NaN     NaN
+ v2-base    da2k                 acc_indoor          NaN                                                                                       NaN 0.9690       NaN     NaN
+ v2-base    da2k               acc_non_real          NaN                                                                                       NaN 0.9901       NaN     NaN
+ v2-base    da2k                 acc_object          NaN                                                                                       NaN 0.9730       NaN     NaN
+ v2-base    da2k                acc_outdoor          NaN                                                                                       NaN 0.9535       NaN     NaN
+ v2-base    da2k                acc_overall        0.970 Yang et al. 2024 Table 3 ViT-B percent divided by 100 https://arxiv.org/html/2406.09414v2 0.9724       NaN  0.0024
+ v2-base    da2k acc_transparent_reflective          NaN                                                                                       NaN 0.9579       NaN     NaN
+ v2-base    da2k             acc_underwater          NaN                                                                                       NaN 0.9915       NaN     NaN
+ v2-base     nyu                     absrel        0.049                  Yang et al. 2024 Table 2 NYU-D ViT-B https://arxiv.org/html/2406.09414v2 0.0573     654.0  0.0083
+ v2-base     nyu                     delta1        0.976                  Yang et al. 2024 Table 2 NYU-D ViT-B https://arxiv.org/html/2406.09414v2 0.9593     654.0 -0.0167
+ v2-base     nyu                       rmse          NaN                                                                                       NaN 0.2831     654.0     NaN
+v2-large    da2k          acc_adverse_style          NaN                                                                                       NaN 0.9726       NaN     NaN
+v2-large    da2k                 acc_aerial          NaN                                                                                       NaN 1.0000       NaN     NaN
+v2-large    da2k                 acc_indoor          NaN                                                                                       NaN 0.9643       NaN     NaN
+v2-large    da2k               acc_non_real          NaN                                                                                       NaN 0.9934       NaN     NaN
+v2-large    da2k                 acc_object          NaN                                                                                       NaN 0.9797       NaN     NaN
+v2-large    da2k                acc_outdoor          NaN                                                                                       NaN 0.9448       NaN     NaN
+v2-large    da2k                acc_overall        0.971 Yang et al. 2024 Table 3 ViT-L percent divided by 100 https://arxiv.org/html/2406.09414v2 0.9710       NaN -0.0000
+v2-large    da2k acc_transparent_reflective          NaN                                                                                       NaN 0.9486       NaN     NaN
+v2-large    da2k             acc_underwater          NaN                                                                                       NaN 0.9915       NaN     NaN
+v2-large     nyu                     absrel        0.045                  Yang et al. 2024 Table 2 NYU-D ViT-L https://arxiv.org/html/2406.09414v2 0.0548     654.0  0.0098
+v2-large     nyu                     delta1        0.979                  Yang et al. 2024 Table 2 NYU-D ViT-L https://arxiv.org/html/2406.09414v2 0.9609     654.0 -0.0181
+v2-large     nyu                       rmse          NaN                                                                                       NaN 0.2770     654.0     NaN
+v2-small    da2k          acc_adverse_style          NaN                                                                                       NaN 0.9543       NaN     NaN
+v2-small    da2k                 acc_aerial          NaN                                                                                       NaN 0.9639       NaN     NaN
+v2-small    da2k                 acc_indoor          NaN                                                                                       NaN 0.9357       NaN     NaN
+v2-small    da2k               acc_non_real          NaN                                                                                       NaN 0.9835       NaN     NaN
+v2-small    da2k                 acc_object          NaN                                                                                       NaN 0.9730       NaN     NaN
+v2-small    da2k                acc_outdoor          NaN                                                                                       NaN 0.9302       NaN     NaN
+v2-small    da2k                acc_overall        0.953 Yang et al. 2024 Table 3 ViT-S percent divided by 100 https://arxiv.org/html/2406.09414v2 0.9531       NaN  0.0001
+v2-small    da2k acc_transparent_reflective          NaN                                                                                       NaN 0.9346       NaN     NaN
+v2-small    da2k             acc_underwater          NaN                                                                                       NaN 0.9915       NaN     NaN
+v2-small     nyu                     absrel        0.053                  Yang et al. 2024 Table 2 NYU-D ViT-S https://arxiv.org/html/2406.09414v2 0.0617     654.0  0.0087
+v2-small     nyu                     delta1        0.973                  Yang et al. 2024 Table 2 NYU-D ViT-S https://arxiv.org/html/2406.09414v2 0.9556     654.0 -0.0174
+v2-small     nyu                       rmse          NaN                                                                                       NaN 0.2968     654.0     NaN
+
+Every gap needs one sentence of explanation in the report (subset? alignment? resolution?).
+saved figures/accuracy_vs_latency.png

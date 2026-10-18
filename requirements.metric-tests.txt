@@ -1,0 +1,6 @@
+# Metric/data-helper tests only. Recorded from the fresh Colab test session.
+# Python 3.13.16; source commit baae1a5b56c587c76fccc9ebc65e4e33c96d7824.
+# This is not the historical model-evaluation environment or a full project lock.
+pytest==8.4.2
+numpy==2.1.3
+pillow==11.3.0

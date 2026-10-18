@@ -1,13 +1,13 @@
 model,dataset,metric,paper_value,paper_source
-v2-small,nyu,absrel,,
-v2-small,nyu,delta1,,
-v2-base,nyu,absrel,,
-v2-base,nyu,delta1,,
-v2-large,nyu,absrel,,
-v2-large,nyu,delta1,,
-v2-small,da2k,acc_overall,,
-v2-base,da2k,acc_overall,,
-v2-large,da2k,acc_overall,,
+v2-small,nyu,absrel,0.053,Yang et al. 2024 Table 2 NYU-D ViT-S https://arxiv.org/html/2406.09414v2
+v2-small,nyu,delta1,0.973,Yang et al. 2024 Table 2 NYU-D ViT-S https://arxiv.org/html/2406.09414v2
+v2-base,nyu,absrel,0.049,Yang et al. 2024 Table 2 NYU-D ViT-B https://arxiv.org/html/2406.09414v2
+v2-base,nyu,delta1,0.976,Yang et al. 2024 Table 2 NYU-D ViT-B https://arxiv.org/html/2406.09414v2
+v2-large,nyu,absrel,0.045,Yang et al. 2024 Table 2 NYU-D ViT-L https://arxiv.org/html/2406.09414v2
+v2-large,nyu,delta1,0.979,Yang et al. 2024 Table 2 NYU-D ViT-L https://arxiv.org/html/2406.09414v2
+v2-small,da2k,acc_overall,0.953,Yang et al. 2024 Table 3 ViT-S percent divided by 100 https://arxiv.org/html/2406.09414v2
+v2-base,da2k,acc_overall,0.970,Yang et al. 2024 Table 3 ViT-B percent divided by 100 https://arxiv.org/html/2406.09414v2
+v2-large,da2k,acc_overall,0.971,Yang et al. 2024 Table 3 ViT-L percent divided by 100 https://arxiv.org/html/2406.09414v2
 v1-small,da2k,acc_overall,,
 v1-base,da2k,acc_overall,,
 v1-large,da2k,acc_overall,,

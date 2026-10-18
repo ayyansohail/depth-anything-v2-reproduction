@@ -1,5 +1,5 @@
 """Produce report evidence: paper-vs-ours table + accuracy-vs-latency figure.
-Fill results/paper_reported.csv by hand from the paper (paper_value, paper_source) first.
+Verified references are in results/paper_reported.csv; unavailable references stay blank.
 Run:  python scripts/06_make_report_tables.py --dataset nyu
 """
 import argparse, os

@@ -27,7 +27,7 @@ flowchart LR
 - **HF `transformers` port, not the raw repo.** Same weights, one pip install, identical in Colab and the app. The official repo remains our reference for the protocol.
 - **Pure-numpy metrics with unit tests.** Metric bugs are the cheapest way to get a wrong table; tests run in a second with no GPU.
 - **Long-format results CSVs.** Every script writes `(model, dataset, metric, ours)`, so the paper-vs-ours table is a single merge.
-- **Protocol frozen first** (`docs/EVAL_PROTOCOL.md`), before any full run.
+- **Protocol documented and revised during debugging** (`docs/EVAL_PROTOCOL.md`). The current full NYU results include the crop; earlier runs used different settings. Historical execution-time environment and code revisions are not fully archived.
 
 ## 4. Workflow
 - **Compute:** Colab/Kaggle T4 for scripts 02-04 (`notebooks/colab_runner.ipynb`); laptops/CPU for the app, tests, docs. Colab disk is wiped: commit `results/` and `figures/` after each run.

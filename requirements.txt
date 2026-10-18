@@ -1,6 +1,6 @@
-# Loose ranges so this installs on Colab/Kaggle/local.
-# Once everything works on YOUR machine, run:  bash scripts/freeze.sh
-# and commit requirements.lock.txt  (assignment asks you to pin versions early).
+# Compatibility ranges, not an exact record of the saved-results environment.
+# Capture the Colab environment before installing/upgrading anything:
+# see docs/COLAB_STAGE3.md. Historical exact versions are not yet archived.
 torch>=2.1
 torchvision>=0.16
 transformers>=4.45,<6
