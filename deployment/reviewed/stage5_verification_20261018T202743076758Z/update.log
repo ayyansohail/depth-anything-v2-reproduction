@@ -1,0 +1,11 @@
+From https://github.com/maaz-zubairi/depth-anything-v2-repro
+ * branch            feat/streamlit-deployment -> FETCH_HEAD
+   131efc4..dedcdd3  feat/streamlit-deployment -> origin/feat/streamlit-deployment
+Updating 131efc4..dedcdd3
+Fast-forward
+ PROVENANCE.md                                  | 4 ++++
+ app/requirements.txt                           | 1 +
+ docs/DEPLOYMENT.md                             | 6 +++---
+ notebooks/stage5_deployment_verification.ipynb | 2 +-
+ scripts/verify_deployment.py                   | 2 +-
+ 5 files changed, 10 insertions(+), 5 deletions(-)

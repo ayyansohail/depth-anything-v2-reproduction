@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "models": [
+    "v2-small",
+    "v2-base",
+    "v2-large"
+  ],
+  "predictions": 4,
+  "small_reload_after_large": true,
+  "retained_result_check": true,
+  "original_size": [
+    4032,
+    3024
+  ],
+  "output_size": [
+    1024,
+    768
+  ],
+  "note": "Process peak RSS is cumulative, not per-model memory. Colab success does not establish host feasibility."
+}

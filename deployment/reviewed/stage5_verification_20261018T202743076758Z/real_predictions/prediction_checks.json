@@ -1,0 +1,90 @@
+[
+  {
+    "key": "v2-small",
+    "revision": "5426e4f0f36572d16453bbda7a8389317b1bef99",
+    "input_hash": "c1803ed278a5d7a0489a8815e1f5580e2c26cf7c20206359a3d2d81737e4d776",
+    "size": [
+      1024,
+      768
+    ],
+    "original_size": [
+      4032,
+      3024
+    ],
+    "resized": true,
+    "prediction_ms": 5454.1547590001755,
+    "model_load_ms": 5195.975783999984,
+    "loaded_this_request": true,
+    "device": "cpu",
+    "params_m": 24.785089,
+    "constant": false,
+    "sequence_position": 1,
+    "process_peak_rss_mib": 719.62109375
+  },
+  {
+    "key": "v2-base",
+    "revision": "b1958afc87fb45a9e3746cb387596094de553ed8",
+    "input_hash": "c1803ed278a5d7a0489a8815e1f5580e2c26cf7c20206359a3d2d81737e4d776",
+    "size": [
+      1024,
+      768
+    ],
+    "original_size": [
+      4032,
+      3024
+    ],
+    "resized": true,
+    "prediction_ms": 12656.462401000226,
+    "model_load_ms": 3981.920808000268,
+    "loaded_this_request": true,
+    "device": "cpu",
+    "params_m": 97.470785,
+    "constant": false,
+    "sequence_position": 2,
+    "process_peak_rss_mib": 1216.48828125
+  },
+  {
+    "key": "v2-large",
+    "revision": "7581137eff8d4e94f6e796d3baea0e9fa79b22d2",
+    "input_hash": "c1803ed278a5d7a0489a8815e1f5580e2c26cf7c20206359a3d2d81737e4d776",
+    "size": [
+      1024,
+      768
+    ],
+    "original_size": [
+      4032,
+      3024
+    ],
+    "resized": true,
+    "prediction_ms": 39737.61314600006,
+    "model_load_ms": 11456.867225999758,
+    "loaded_this_request": true,
+    "device": "cpu",
+    "params_m": 335.315649,
+    "constant": false,
+    "sequence_position": 3,
+    "process_peak_rss_mib": 2605.7109375
+  },
+  {
+    "key": "v2-small",
+    "revision": "5426e4f0f36572d16453bbda7a8389317b1bef99",
+    "input_hash": "c1803ed278a5d7a0489a8815e1f5580e2c26cf7c20206359a3d2d81737e4d776",
+    "size": [
+      1024,
+      768
+    ],
+    "original_size": [
+      4032,
+      3024
+    ],
+    "resized": true,
+    "prediction_ms": 3721.381822999774,
+    "model_load_ms": 348.24265799989007,
+    "loaded_this_request": true,
+    "device": "cpu",
+    "params_m": 24.785089,
+    "constant": false,
+    "sequence_position": 4,
+    "process_peak_rss_mib": 2605.7109375
+  }
+]

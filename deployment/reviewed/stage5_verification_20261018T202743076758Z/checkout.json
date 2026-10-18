@@ -1,0 +1,8 @@
+{
+  "branch": "feat/streamlit-deployment",
+  "commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf",
+  "python": "3.13.16",
+  "environment_builder": "virtualenv 20.35.4 recovery",
+  "context": "new Colab isolated CPU application verification",
+  "plotting_backend": "Agg"
+}

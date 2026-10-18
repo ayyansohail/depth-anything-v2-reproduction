@@ -10,7 +10,7 @@ The work is the evaluation pipeline, the metric code, a paper-specific experimen
 
 **Branch: `feat/streamlit-deployment`. Streamlit Community Cloud, CPU, Small first.**
 
-Implementation prepared; Colab verification and hosted acceptance are pending.
+Colab verification is complete: **24 tests and four real CPU predictions passed**, including Small, Base, Large and switching back to Small. See [reviewed evidence](deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md). Hosted acceptance remains pending.
 No public app URL has been verified yet. Start with the
 [Stage 5 Colab notebook](https://colab.research.google.com/github/maaz-zubairi/depth-anything-v2-repro/blob/feat/streamlit-deployment/notebooks/stage5_deployment_verification.ipynb),
 then follow [the deployment guide](docs/DEPLOYMENT.md). The initial hosted model

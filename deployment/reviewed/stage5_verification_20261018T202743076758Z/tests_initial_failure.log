@@ -1,0 +1,707 @@
+...............FFFFFF.F.                                                 [100%]
+=================================== FAILURES ===================================
+_________________ test_constant_and_invalid_prediction_outputs _________________
+
+    def test_constant_and_invalid_prediction_outputs():
+>       colour, raw, constant = encode_prediction(np.ones((48, 64)), (64, 48))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_deployment.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/depth_service.py:123: in encode_prediction
+    from matplotlib import colormaps
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py:1296: in <module>
+    rcParams['backend'] = os.environ.get('MPLBACKEND')
+    ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[ValueError("Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported val...wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']") raised in repr()] RcParams object at 0x7beb8604b520>
+key = 'backend', val = 'module://matplotlib_inline.backend_inline'
+
+    def __setitem__(self, key, val):
+        try:
+            if key in _deprecated_map:
+                version, alt_key, alt_val, inverse_alt = _deprecated_map[key]
+                _api.warn_deprecated(
+                    version, name=key, obj_type="rcparam", alternative=alt_key)
+                key = alt_key
+                val = alt_val(val)
+            elif key in _deprecated_remain_as_none and val is not None:
+                version, = _deprecated_remain_as_none[key]
+                _api.warn_deprecated(version, name=key, obj_type="rcparam")
+            elif key in _deprecated_ignore_map:
+                version, alt_key = _deprecated_ignore_map[key]
+                _api.warn_deprecated(
+                    version, name=key, obj_type="rcparam", alternative=alt_key)
+                return
+            elif key == 'backend':
+                if val is rcsetup._auto_backend_sentinel:
+                    if 'backend' in self:
+                        return
+            try:
+                cval = self.validate[key](val)
+            except ValueError as ve:
+>               raise ValueError(f"Key {key}: {ve}") from None
+E               ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py:771: ValueError
+_________ test_downloads_are_rgb_and_16_bit_with_monotonic_near_values _________
+
+    def test_downloads_are_rgb_and_16_bit_with_monotonic_near_values():
+        values = np.tile(np.linspace(0, 10, 64), (48, 1))
+>       colour, raw, constant = encode_prediction(values, (64, 48))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_deployment.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/depth_service.py:123: in encode_prediction
+    from matplotlib import colormaps
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py:1296: in <module>
+    rcParams['backend'] = os.environ.get('MPLBACKEND')
+    ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[ValueError("Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported val...wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']") raised in repr()] RcParams object at 0x7beb85c37ed0>
+key = 'backend', val = 'module://matplotlib_inline.backend_inline'
+
+    def __setitem__(self, key, val):
+        try:
+            if key in _deprecated_map:
+                version, alt_key, alt_val, inverse_alt = _deprecated_map[key]
+                _api.warn_deprecated(
+                    version, name=key, obj_type="rcparam", alternative=alt_key)
+                key = alt_key
+                val = alt_val(val)
+            elif key in _deprecated_remain_as_none and val is not None:
+                version, = _deprecated_remain_as_none[key]
+                _api.warn_deprecated(version, name=key, obj_type="rcparam")
+            elif key in _deprecated_ignore_map:
+                version, alt_key = _deprecated_ignore_map[key]
+                _api.warn_deprecated(
+                    version, name=key, obj_type="rcparam", alternative=alt_key)
+                return
+            elif key == 'backend':
+                if val is rcsetup._auto_backend_sentinel:
+                    if 'backend' in self:
+                        return
+            try:
+                cval = self.validate[key](val)
+            except ValueError as ve:
+>               raise ValueError(f"Key {key}: {ve}") from None
+E               ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py:771: ValueError
+________ test_result_retention_and_invalidation_do_not_repeat_inference ________
+
+self = <app.depth_service.ModelManager object at 0x7beb860363c0>
+key = 'v2-small'
+prepared = PreparedImage(image=<PIL.Image.Image image mode=RGB size=64x48 at 0x7BEB85BB67B0>, original_size=(64, 48), input_hash='699db0be77297268926258bd3ee95a83fec80e7742a0947c6fba462c1ec7fefe', resized=False)
+on_status = None
+
+    def predict(self, key, prepared: PreparedImage, on_status=None):
+        if key not in MODEL_REVISIONS:
+            raise PredictionError("This model is not supported.")
+        notify = on_status or (lambda message: None)
+        notify("Waiting for the prediction service…")
+        with self._lock:
+            try:
+                revision = MODEL_REVISIONS[key]
+                loaded = self._key != key or self._revision != revision or self._model is None
+                load_ms = 0.0
+                if loaded:
+                    self._release()
+                    notify(f"Loading {LABELS[key]}; the first request may download weights…")
+                    started = time.perf_counter()
+                    model = self.loader(key, revision)
+                    self._model, self._key, self._revision = model, key, revision
+                    del model
+                    load_ms = (time.perf_counter() - started) * 1000
+                notify("Generating relative depth…")
+                started = time.perf_counter()
+                disparity = self._model.predict(prepared.image)
+                prediction_ms = (time.perf_counter() - started) * 1000
+>               colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+app/depth_service.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/depth_service.py:123: in encode_prediction
+    from matplotlib import colormaps
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py:1296: in <module>
+    rcParams['backend'] = os.environ.get('MPLBACKEND')
+    ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[ValueError("Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported val...wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']") raised in repr()] RcParams object at 0x7beb85cb9b80>
+key = 'backend', val = 'module://matplotlib_inline.backend_inline'
+
+    def __setitem__(self, key, val):
+        try:
+            if key in _deprecated_map:
+                version, alt_key, alt_val, inverse_alt = _deprecated_map[key]
+                _api.warn_deprecated(
+                    version, name=key, obj_type="rcparam", alternative=alt_key)
+                key = alt_key
+                val = alt_val(val)
+            elif key in _deprecated_remain_as_none and val is not None:
+                version, = _deprecated_remain_as_none[key]
+                _api.warn_deprecated(version, name=key, obj_type="rcparam")
+            elif key in _deprecated_ignore_map:
+                version, alt_key = _deprecated_ignore_map[key]
+                _api.warn_deprecated(
+                    version, name=key, obj_type="rcparam", alternative=alt_key)
+                return
+            elif key == 'backend':
+                if val is rcsetup._auto_backend_sentinel:
+                    if 'backend' in self:
+                        return
+            try:
+                cval = self.validate[key](val)
+            except ValueError as ve:
+>               raise ValueError(f"Key {key}: {ve}") from None
+E               ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py:771: ValueError
+
+The above exception was the direct cause of the following exception:
+
+    def test_result_retention_and_invalidation_do_not_repeat_inference():
+        model = FakeModel()
+        manager = ModelManager(lambda key, revision: model)
+        state, content = {}, image_bytes(colour="red")
+        assert update_result(state, content, "a.png", "v2-small", manager) is None
+>       first = update_result(state, content, "a.png", "v2-small", manager, submitted=True)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_deployment.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/depth_service.py:208: in update_result
+    result = manager.predict(key, prepared, on_status=on_status)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <app.depth_service.ModelManager object at 0x7beb860363c0>
+key = 'v2-small'
+prepared = PreparedImage(image=<PIL.Image.Image image mode=RGB size=64x48 at 0x7BEB85BB67B0>, original_size=(64, 48), input_hash='699db0be77297268926258bd3ee95a83fec80e7742a0947c6fba462c1ec7fefe', resized=False)
+on_status = None
+
+    def predict(self, key, prepared: PreparedImage, on_status=None):
+        if key not in MODEL_REVISIONS:
+            raise PredictionError("This model is not supported.")
+        notify = on_status or (lambda message: None)
+        notify("Waiting for the prediction service…")
+        with self._lock:
+            try:
+                revision = MODEL_REVISIONS[key]
+                loaded = self._key != key or self._revision != revision or self._model is None
+                load_ms = 0.0
+                if loaded:
+                    self._release()
+                    notify(f"Loading {LABELS[key]}; the first request may download weights…")
+                    started = time.perf_counter()
+                    model = self.loader(key, revision)
+                    self._model, self._key, self._revision = model, key, revision
+                    del model
+                    load_ms = (time.perf_counter() - started) * 1000
+                notify("Generating relative depth…")
+                started = time.perf_counter()
+                disparity = self._model.predict(prepared.image)
+                prediction_ms = (time.perf_counter() - started) * 1000
+                colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                result = {"key": key, "revision": revision, "input_hash": prepared.input_hash,
+                          "size": list(prepared.image.size), "original_size": list(prepared.original_size),
+                          "resized": prepared.resized, "prediction_ms": prediction_ms,
+                          "model_load_ms": load_ms, "loaded_this_request": loaded,
+                          "device": self._model.device, "params_m": self._model.params_m,
+                          "input_png": png_bytes(np.asarray(prepared.image)),
+                          "colour_png": colour, "depth16_png": depth16,
+                          "constant": constant}
+                LOGGER.info("prediction model=%s revision=%s size=%s prediction_ms=%.1f load_ms=%.1f",
+                            key, revision, result["size"], prediction_ms, load_ms)
+                return result
+            except Exception as error:
+                self._release()
+                LOGGER.exception("Prediction failed for %s", key)
+                if isinstance(error, PredictionError):
+                    raise
+>               raise PredictionError("Prediction could not finish. Try again with Small or a smaller image. If it persists, contact the app owner.") from error
+E               app.depth_service.PredictionError: Prediction could not finish. Try again with Small or a smaller image. If it persists, contact the app owner.
+
+app/depth_service.py:195: PredictionError
+------------------------------ Captured log call -------------------------------
+ERROR    dav2.deployment:depth_service.py:192 Prediction failed for v2-small
+Traceback (most recent call last):
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 178, in predict
+    colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 123, in encode_prediction
+    from matplotlib import colormaps
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 1296, in <module>
+    rcParams['backend'] = os.environ.get('MPLBACKEND')
+    ~~~~~~~~^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 771, in __setitem__
+    raise ValueError(f"Key {key}: {ve}") from None
+ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+__________ test_switch_releases_old_model_and_passes_pinned_revision ___________
+
+self = <app.depth_service.ModelManager object at 0x7beb86051f90>
+key = 'v2-small'
+prepared = PreparedImage(image=<PIL.Image.Image image mode=RGB size=64x48 at 0x7BEB85BB59F0>, original_size=(64, 48), input_hash='c0305df6a51bef2fd7c22f7fa24f8fe16d3fb68fba8bec87dc670ef54f8d80d9', resized=False)
+on_status = None
+
+    def predict(self, key, prepared: PreparedImage, on_status=None):
+        if key not in MODEL_REVISIONS:
+            raise PredictionError("This model is not supported.")
+        notify = on_status or (lambda message: None)
+        notify("Waiting for the prediction service…")
+        with self._lock:
+            try:
+                revision = MODEL_REVISIONS[key]
+                loaded = self._key != key or self._revision != revision or self._model is None
+                load_ms = 0.0
+                if loaded:
+                    self._release()
+                    notify(f"Loading {LABELS[key]}; the first request may download weights…")
+                    started = time.perf_counter()
+                    model = self.loader(key, revision)
+                    self._model, self._key, self._revision = model, key, revision
+                    del model
+                    load_ms = (time.perf_counter() - started) * 1000
+                notify("Generating relative depth…")
+                started = time.perf_counter()
+                disparity = self._model.predict(prepared.image)
+                prediction_ms = (time.perf_counter() - started) * 1000
+>               colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+app/depth_service.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/depth_service.py:123: in encode_prediction
+    from matplotlib import colormaps
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py:1296: in <module>
+    rcParams['backend'] = os.environ.get('MPLBACKEND')
+    ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[ValueError("Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported val...wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']") raised in repr()] RcParams object at 0x7beb85cb9400>
+key = 'backend', val = 'module://matplotlib_inline.backend_inline'
+
+    def __setitem__(self, key, val):
+        try:
+            if key in _deprecated_map:
+                version, alt_key, alt_val, inverse_alt = _deprecated_map[key]
+                _api.warn_deprecated(
+                    version, name=key, obj_type="rcparam", alternative=alt_key)
+                key = alt_key
+                val = alt_val(val)
+            elif key in _deprecated_remain_as_none and val is not None:
+                version, = _deprecated_remain_as_none[key]
+                _api.warn_deprecated(version, name=key, obj_type="rcparam")
+            elif key in _deprecated_ignore_map:
+                version, alt_key = _deprecated_ignore_map[key]
+                _api.warn_deprecated(
+                    version, name=key, obj_type="rcparam", alternative=alt_key)
+                return
+            elif key == 'backend':
+                if val is rcsetup._auto_backend_sentinel:
+                    if 'backend' in self:
+                        return
+            try:
+                cval = self.validate[key](val)
+            except ValueError as ve:
+>               raise ValueError(f"Key {key}: {ve}") from None
+E               ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py:771: ValueError
+
+The above exception was the direct cause of the following exception:
+
+    def test_switch_releases_old_model_and_passes_pinned_revision():
+        references, calls = [], []
+        def loader(key, revision):
+            gc.collect()
+            if references:
+                assert references[-1]() is None, "Previous model must be released before loading the next"
+            model = FakeModel()
+            references.append(weakref.ref(model))
+            calls.append((key, revision))
+            return model
+        manager = ModelManager(loader)
+        prepared = prepare_image(image_bytes(), "a.png")
+>       manager.predict("v2-small", prepared)
+
+tests/test_deployment.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <app.depth_service.ModelManager object at 0x7beb86051f90>
+key = 'v2-small'
+prepared = PreparedImage(image=<PIL.Image.Image image mode=RGB size=64x48 at 0x7BEB85BB59F0>, original_size=(64, 48), input_hash='c0305df6a51bef2fd7c22f7fa24f8fe16d3fb68fba8bec87dc670ef54f8d80d9', resized=False)
+on_status = None
+
+    def predict(self, key, prepared: PreparedImage, on_status=None):
+        if key not in MODEL_REVISIONS:
+            raise PredictionError("This model is not supported.")
+        notify = on_status or (lambda message: None)
+        notify("Waiting for the prediction service…")
+        with self._lock:
+            try:
+                revision = MODEL_REVISIONS[key]
+                loaded = self._key != key or self._revision != revision or self._model is None
+                load_ms = 0.0
+                if loaded:
+                    self._release()
+                    notify(f"Loading {LABELS[key]}; the first request may download weights…")
+                    started = time.perf_counter()
+                    model = self.loader(key, revision)
+                    self._model, self._key, self._revision = model, key, revision
+                    del model
+                    load_ms = (time.perf_counter() - started) * 1000
+                notify("Generating relative depth…")
+                started = time.perf_counter()
+                disparity = self._model.predict(prepared.image)
+                prediction_ms = (time.perf_counter() - started) * 1000
+                colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                result = {"key": key, "revision": revision, "input_hash": prepared.input_hash,
+                          "size": list(prepared.image.size), "original_size": list(prepared.original_size),
+                          "resized": prepared.resized, "prediction_ms": prediction_ms,
+                          "model_load_ms": load_ms, "loaded_this_request": loaded,
+                          "device": self._model.device, "params_m": self._model.params_m,
+                          "input_png": png_bytes(np.asarray(prepared.image)),
+                          "colour_png": colour, "depth16_png": depth16,
+                          "constant": constant}
+                LOGGER.info("prediction model=%s revision=%s size=%s prediction_ms=%.1f load_ms=%.1f",
+                            key, revision, result["size"], prediction_ms, load_ms)
+                return result
+            except Exception as error:
+                self._release()
+                LOGGER.exception("Prediction failed for %s", key)
+                if isinstance(error, PredictionError):
+                    raise
+>               raise PredictionError("Prediction could not finish. Try again with Small or a smaller image. If it persists, contact the app owner.") from error
+E               app.depth_service.PredictionError: Prediction could not finish. Try again with Small or a smaller image. If it persists, contact the app owner.
+
+app/depth_service.py:195: PredictionError
+------------------------------ Captured log call -------------------------------
+ERROR    dav2.deployment:depth_service.py:192 Prediction failed for v2-small
+Traceback (most recent call last):
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 178, in predict
+    colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 123, in encode_prediction
+    from matplotlib import colormaps
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 1296, in <module>
+    rcParams['backend'] = os.environ.get('MPLBACKEND')
+    ~~~~~~~~^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 771, in __setitem__
+    raise ValueError(f"Key {key}: {ve}") from None
+ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+______ test_failed_load_or_prediction_can_be_retried_without_stale_result ______
+
+self = <app.depth_service.ModelManager object at 0x7beb88db96d0>
+key = 'v2-small'
+prepared = PreparedImage(image=<PIL.Image.Image image mode=RGB size=64x48 at 0x7BEB85F9F6B0>, original_size=(64, 48), input_hash='c0305df6a51bef2fd7c22f7fa24f8fe16d3fb68fba8bec87dc670ef54f8d80d9', resized=False)
+on_status = None
+
+    def predict(self, key, prepared: PreparedImage, on_status=None):
+        if key not in MODEL_REVISIONS:
+            raise PredictionError("This model is not supported.")
+        notify = on_status or (lambda message: None)
+        notify("Waiting for the prediction service…")
+        with self._lock:
+            try:
+                revision = MODEL_REVISIONS[key]
+                loaded = self._key != key or self._revision != revision or self._model is None
+                load_ms = 0.0
+                if loaded:
+                    self._release()
+                    notify(f"Loading {LABELS[key]}; the first request may download weights…")
+                    started = time.perf_counter()
+                    model = self.loader(key, revision)
+                    self._model, self._key, self._revision = model, key, revision
+                    del model
+                    load_ms = (time.perf_counter() - started) * 1000
+                notify("Generating relative depth…")
+                started = time.perf_counter()
+                disparity = self._model.predict(prepared.image)
+                prediction_ms = (time.perf_counter() - started) * 1000
+>               colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+app/depth_service.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/depth_service.py:123: in encode_prediction
+    from matplotlib import colormaps
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py:1296: in <module>
+    rcParams['backend'] = os.environ.get('MPLBACKEND')
+    ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[ValueError("Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported val...wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']") raised in repr()] RcParams object at 0x7beb85d234d0>
+key = 'backend', val = 'module://matplotlib_inline.backend_inline'
+
+    def __setitem__(self, key, val):
+        try:
+            if key in _deprecated_map:
+                version, alt_key, alt_val, inverse_alt = _deprecated_map[key]
+                _api.warn_deprecated(
+                    version, name=key, obj_type="rcparam", alternative=alt_key)
+                key = alt_key
+                val = alt_val(val)
+            elif key in _deprecated_remain_as_none and val is not None:
+                version, = _deprecated_remain_as_none[key]
+                _api.warn_deprecated(version, name=key, obj_type="rcparam")
+            elif key in _deprecated_ignore_map:
+                version, alt_key = _deprecated_ignore_map[key]
+                _api.warn_deprecated(
+                    version, name=key, obj_type="rcparam", alternative=alt_key)
+                return
+            elif key == 'backend':
+                if val is rcsetup._auto_backend_sentinel:
+                    if 'backend' in self:
+                        return
+            try:
+                cval = self.validate[key](val)
+            except ValueError as ve:
+>               raise ValueError(f"Key {key}: {ve}") from None
+E               ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py:771: ValueError
+
+The above exception was the direct cause of the following exception:
+
+    def test_failed_load_or_prediction_can_be_retried_without_stale_result():
+        attempts = []
+        def loader(key, revision):
+            attempts.append(key)
+            if len(attempts) == 1:
+                raise OSError("simulated model download failure")
+            return FakeModel()
+        manager, state = ModelManager(loader), {}
+        content = image_bytes()
+        with pytest.raises(PredictionError):
+            update_result(state, content, "a.png", "v2-small", manager, submitted=True)
+        assert "result" not in state
+>       assert update_result(state, content, "a.png", "v2-small", manager, submitted=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_deployment.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/depth_service.py:208: in update_result
+    result = manager.predict(key, prepared, on_status=on_status)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <app.depth_service.ModelManager object at 0x7beb88db96d0>
+key = 'v2-small'
+prepared = PreparedImage(image=<PIL.Image.Image image mode=RGB size=64x48 at 0x7BEB85F9F6B0>, original_size=(64, 48), input_hash='c0305df6a51bef2fd7c22f7fa24f8fe16d3fb68fba8bec87dc670ef54f8d80d9', resized=False)
+on_status = None
+
+    def predict(self, key, prepared: PreparedImage, on_status=None):
+        if key not in MODEL_REVISIONS:
+            raise PredictionError("This model is not supported.")
+        notify = on_status or (lambda message: None)
+        notify("Waiting for the prediction service…")
+        with self._lock:
+            try:
+                revision = MODEL_REVISIONS[key]
+                loaded = self._key != key or self._revision != revision or self._model is None
+                load_ms = 0.0
+                if loaded:
+                    self._release()
+                    notify(f"Loading {LABELS[key]}; the first request may download weights…")
+                    started = time.perf_counter()
+                    model = self.loader(key, revision)
+                    self._model, self._key, self._revision = model, key, revision
+                    del model
+                    load_ms = (time.perf_counter() - started) * 1000
+                notify("Generating relative depth…")
+                started = time.perf_counter()
+                disparity = self._model.predict(prepared.image)
+                prediction_ms = (time.perf_counter() - started) * 1000
+                colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                result = {"key": key, "revision": revision, "input_hash": prepared.input_hash,
+                          "size": list(prepared.image.size), "original_size": list(prepared.original_size),
+                          "resized": prepared.resized, "prediction_ms": prediction_ms,
+                          "model_load_ms": load_ms, "loaded_this_request": loaded,
+                          "device": self._model.device, "params_m": self._model.params_m,
+                          "input_png": png_bytes(np.asarray(prepared.image)),
+                          "colour_png": colour, "depth16_png": depth16,
+                          "constant": constant}
+                LOGGER.info("prediction model=%s revision=%s size=%s prediction_ms=%.1f load_ms=%.1f",
+                            key, revision, result["size"], prediction_ms, load_ms)
+                return result
+            except Exception as error:
+                self._release()
+                LOGGER.exception("Prediction failed for %s", key)
+                if isinstance(error, PredictionError):
+                    raise
+>               raise PredictionError("Prediction could not finish. Try again with Small or a smaller image. If it persists, contact the app owner.") from error
+E               app.depth_service.PredictionError: Prediction could not finish. Try again with Small or a smaller image. If it persists, contact the app owner.
+
+app/depth_service.py:195: PredictionError
+------------------------------ Captured log call -------------------------------
+ERROR    dav2.deployment:depth_service.py:192 Prediction failed for v2-small
+Traceback (most recent call last):
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 170, in predict
+    model = self.loader(key, revision)
+  File "/content/dav2_stage5_4y8gs9x0/repo/tests/test_deployment.py", line 134, in loader
+    raise OSError("simulated model download failure")
+OSError: simulated model download failure
+ERROR    dav2.deployment:depth_service.py:192 Prediction failed for v2-small
+Traceback (most recent call last):
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 178, in predict
+    colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 123, in encode_prediction
+    from matplotlib import colormaps
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 1296, in <module>
+    rcParams['backend'] = os.environ.get('MPLBACKEND')
+    ~~~~~~~~^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 771, in __setitem__
+    raise ValueError(f"Key {key}: {ve}") from None
+ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+_______________ test_predictions_are_serialized_across_sessions ________________
+
+    def test_predictions_are_serialized_across_sessions():
+        activity = {"active": 0, "peak": 0}
+        class ConcurrentFake(FakeModel):
+            def predict(self, image):
+                activity["active"] += 1
+                activity["peak"] = max(activity["peak"], activity["active"])
+                time.sleep(0.01)
+                output = super().predict(image)
+                activity["active"] -= 1
+                return output
+        manager = ModelManager(lambda key, revision: ConcurrentFake())
+        prepared = prepare_image(image_bytes(), "a.png")
+        failures = []
+        def request():
+            try:
+                manager.predict("v2-small", prepared)
+            except Exception as error:
+                failures.append(error)
+        threads = [threading.Thread(target=request) for _ in range(3)]
+        for thread in threads:
+            thread.start()
+        for thread in threads:
+            thread.join(timeout=5)
+>       assert not failures and all(not t.is_alive() for t in threads)
+E       AssertionError: assert (not [PredictionError('Prediction could not finish. Try again with Small or a smaller image. If it persists, contact the ap...nError('Prediction could not finish. Try again with Small or a smaller image. If it persists, contact the app owner.')])
+
+tests/test_deployment.py:171: AssertionError
+------------------------------ Captured log call -------------------------------
+ERROR    dav2.deployment:depth_service.py:192 Prediction failed for v2-small
+Traceback (most recent call last):
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 178, in predict
+    colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 123, in encode_prediction
+    from matplotlib import colormaps
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 1296, in <module>
+    rcParams['backend'] = os.environ.get('MPLBACKEND')
+    ~~~~~~~~^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 771, in __setitem__
+    raise ValueError(f"Key {key}: {ve}") from None
+ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+ERROR    dav2.deployment:depth_service.py:192 Prediction failed for v2-small
+Traceback (most recent call last):
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 178, in predict
+    colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 123, in encode_prediction
+    from matplotlib import colormaps
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 1296, in <module>
+    rcParams['backend'] = os.environ.get('MPLBACKEND')
+    ~~~~~~~~^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 771, in __setitem__
+    raise ValueError(f"Key {key}: {ve}") from None
+ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+ERROR    dav2.deployment:depth_service.py:192 Prediction failed for v2-small
+Traceback (most recent call last):
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 178, in predict
+    colour, depth16, constant = encode_prediction(disparity, prepared.image.size)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/repo/app/depth_service.py", line 123, in encode_prediction
+    from matplotlib import colormaps
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 1296, in <module>
+    rcParams['backend'] = os.environ.get('MPLBACKEND')
+    ~~~~~~~~^^^^^^^^^^^
+  File "/content/dav2_stage5_4y8gs9x0/cpu_recovery_3f6kii4c/lib/python3.13/site-packages/matplotlib/__init__.py", line 771, in __setitem__
+    raise ValueError(f"Key {key}: {ve}") from None
+ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+____________ test_optional_revision_preserves_existing_loader_calls ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7beb85cfdf30>
+
+    def test_optional_revision_preserves_existing_loader_calls(monkeypatch):
+        from dav2 import models
+        events = []
+        class FakeBackend:
+            def to(self, device):
+                return self
+            def eval(self):
+                return self
+        def processor(repo, **kwargs):
+            events.append(("processor", kwargs))
+            return object()
+        def backend(repo, **kwargs):
+            events.append(("model", kwargs))
+            return FakeBackend()
+>       monkeypatch.setattr(models.AutoImageProcessor, "from_pretrained", processor)
+
+tests/test_deployment.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/transformers/utils/import_utils.py:2359: in __getattribute__
+    requires_backends(cls, cls._backends)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = <class 'transformers.models.auto.image_processing_auto._LazyModule.__getattr__.<locals>.Placeholder'>
+backends = ['torchvision']
+
+    def requires_backends(obj, backends):
+        """
+        Method that automatically raises in case the specified backends are not available. It is often used during class
+        initialization to ensure the required dependencies are installed:
+    
+        ```py
+        requires_backends(self, ["torch"])
+        ```
+    
+        The backends should be defined in the `BACKEND_MAPPING` defined in `transformers.utils.import_utils`.
+    
+        Args:
+            obj: object to be checked
+            backends: list or tuple of backends to check.
+        """
+        if not isinstance(backends, list | tuple):
+            backends = [backends]
+    
+        name = obj.__name__ if hasattr(obj, "__name__") else obj.__class__.__name__
+    
+        failed = []
+        for backend in backends:
+            if isinstance(backend, Backend):
+                available, msg = backend.is_satisfied, backend.error_message
+            else:
+                available, msg = BACKENDS_MAPPING[backend]
+    
+            if not available():
+                failed.append(msg.format(name))
+    
+        if failed:
+>           raise ImportError("".join(failed))
+E           ImportError: 
+E           AutoImageProcessor requires the Torchvision library but it was not found in your environment. Check out the instructions on the
+E           installation page: https://pytorch.org/get-started/locally/ and follow the ones that match your environment.
+E           Please note that you may need to restart your runtime after installation.
+
+../cpu_recovery_3f6kii4c/lib/python3.13/site-packages/transformers/utils/import_utils.py:2345: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_deployment.py::test_constant_and_invalid_prediction_outputs
+FAILED tests/test_deployment.py::test_downloads_are_rgb_and_16_bit_with_monotonic_near_values
+FAILED tests/test_deployment.py::test_result_retention_and_invalidation_do_not_repeat_inference
+FAILED tests/test_deployment.py::test_switch_releases_old_model_and_passes_pinned_revision
+FAILED tests/test_deployment.py::test_failed_load_or_prediction_can_be_retried_without_stale_result
+FAILED tests/test_deployment.py::test_predictions_are_serialized_across_sessions
+FAILED tests/test_deployment.py::test_optional_revision_preserves_existing_loader_calls
+7 failed, 17 passed in 7.54s

@@ -3,7 +3,7 @@
 Branch: **feat/streamlit-deployment**, based on the completed Stage 4 branch at
 5f4c44c4ca4b0ecaaa480ace3f9788f0ba0f6b38. Main and the Stage 4 branch stay unchanged.
 
-Status: implementation prepared; Colab verification and hosted acceptance pending.
+Status: Colab verification accepted (24 tests; Small, Base, Large, then Small real CPU predictions). See [the evidence review](../deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md). Hosted acceptance remains pending.
 No live URL or successful deployment is claimed. The formal report is deferred.
 
 ## 1 Verify the application in Colab
@@ -86,7 +86,7 @@ No paid hardware upgrade is automatic. A reliable Small-only deployment can
 satisfy Stage 5, with larger-model limits explicitly recorded.
 
 Models use the exact V2 revisions recorded in Stage 4; the pinned loader also
-uses the slow/Pillow image processor to avoid an unpinned torchvision dependency.
+uses slow/Pillow image processing; its required CPU torchvision dependency is pinned alongside torch.
 Legacy callers without a revision retain their original loader behaviour.
 Small is Apache-2.0; Base/Large are CC-BY-NC-4.0 (non-commercial).
 

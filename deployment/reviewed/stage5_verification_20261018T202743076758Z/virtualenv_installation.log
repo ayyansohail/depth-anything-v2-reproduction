@@ -1,0 +1,17 @@
+Collecting virtualenv==20.35.4
+  Downloading virtualenv-20.35.4-py3-none-any.whl.metadata (4.6 kB)
+Collecting distlib<1,>=0.3.7 (from virtualenv==20.35.4)
+  Downloading distlib-0.4.4-py2.py3-none-any.whl.metadata (5.3 kB)
+Collecting filelock<4,>=3.12.2 (from virtualenv==20.35.4)
+  Downloading filelock-3.32.7-py3-none-any.whl.metadata (2.0 kB)
+Collecting platformdirs<5,>=3.9.1 (from virtualenv==20.35.4)
+  Downloading platformdirs-4.13.4-py3-none-any.whl.metadata (5.5 kB)
+Downloading virtualenv-20.35.4-py3-none-any.whl (6.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.0/6.0 MB 21.5 MB/s eta 0:00:00
+Downloading distlib-0.4.4-py2.py3-none-any.whl (472 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 472.1/472.1 kB 19.6 MB/s eta 0:00:00
+Downloading filelock-3.32.7-py3-none-any.whl (100 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.2/100.2 kB 6.3 MB/s eta 0:00:00
+Downloading platformdirs-4.13.4-py3-none-any.whl (32 kB)
+Installing collected packages: distlib, platformdirs, filelock, virtualenv
+Successfully installed distlib-0.4.4 filelock-3.32.7 platformdirs-4.13.4 virtualenv-20.35.4

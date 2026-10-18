@@ -1,0 +1,120 @@
+{
+  "status": "accepted_colab_verification_hosted_acceptance_pending",
+  "source_commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf",
+  "archive_sha256": "c5830dff1893db4cdc9a00f71578a6cea5669b0f559e5de800841a32140fafde",
+  "tests_passed": 24,
+  "real_predictions": 4,
+  "sequence": [
+    "v2-small",
+    "v2-base",
+    "v2-large",
+    "v2-small"
+  ],
+  "deployment_config_lf_sha256": "942f64fa0a718d9b2f87cbdf0e5c4c7663c03fdc54afdfd089ef9d9542dc434d",
+  "config_hash_note": "Colab SHA256 matches the LF-normalized Windows checkout; Windows CRLF bytes differ.",
+  "output_inspection": "PNG headers inspected; input and all three colour maps visually reviewed; Small reload PNG hashes match first Small.",
+  "png_files": [
+    {
+      "file": "1_v2-small_colour_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 8,
+      "colour_type": 2,
+      "sha256": "72f5db36882398a035b30068d8087e26c0ca587e27e3fb3b3f138dc1bdb023f9"
+    },
+    {
+      "file": "1_v2-small_depth16_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 16,
+      "colour_type": 0,
+      "sha256": "788db120c8d9f750549e2d7eb92c9005d70590172ba6c6a35cbea55cf732580a"
+    },
+    {
+      "file": "1_v2-small_input_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 8,
+      "colour_type": 2,
+      "sha256": "82043baf3d49850016a1c92aa68354abd63914df7fd79622ab9516ebe3f43c0b"
+    },
+    {
+      "file": "2_v2-base_colour_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 8,
+      "colour_type": 2,
+      "sha256": "000fd917f115a149e85ba8fb96e0fbb4f732182c8f5bda18e96e83b9dc194e71"
+    },
+    {
+      "file": "2_v2-base_depth16_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 16,
+      "colour_type": 0,
+      "sha256": "5b530866462e20de1be32f5ca8a015a05dc4c2132fa1a089e43ab956cbd79df9"
+    },
+    {
+      "file": "2_v2-base_input_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 8,
+      "colour_type": 2,
+      "sha256": "82043baf3d49850016a1c92aa68354abd63914df7fd79622ab9516ebe3f43c0b"
+    },
+    {
+      "file": "3_v2-large_colour_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 8,
+      "colour_type": 2,
+      "sha256": "68768aa8ad241651ec1d4473f2b53fc1801a8c69d6f47d496ba9982c6a9b9760"
+    },
+    {
+      "file": "3_v2-large_depth16_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 16,
+      "colour_type": 0,
+      "sha256": "3241e4e5e39e34ac4ba9c3de20ca2890a57f446012afb121e9e8e8abe6176f76"
+    },
+    {
+      "file": "3_v2-large_input_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 8,
+      "colour_type": 2,
+      "sha256": "82043baf3d49850016a1c92aa68354abd63914df7fd79622ab9516ebe3f43c0b"
+    },
+    {
+      "file": "4_v2-small_colour_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 8,
+      "colour_type": 2,
+      "sha256": "72f5db36882398a035b30068d8087e26c0ca587e27e3fb3b3f138dc1bdb023f9"
+    },
+    {
+      "file": "4_v2-small_depth16_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 16,
+      "colour_type": 0,
+      "sha256": "788db120c8d9f750549e2d7eb92c9005d70590172ba6c6a35cbea55cf732580a"
+    },
+    {
+      "file": "4_v2-small_input_png.png",
+      "width": 1024,
+      "height": 768,
+      "bit_depth": 8,
+      "colour_type": 2,
+      "sha256": "82043baf3d49850016a1c92aa68354abd63914df7fd79622ab9516ebe3f43c0b"
+    }
+  ],
+  "limitations": [
+    "No tests, Python, installs or inference executed locally during review.",
+    "Colab CPU evidence only; no public URL or actual-host resource verification.",
+    "Reported process peak RSS is cumulative, not a model-specific or current RSS measurement.",
+    "One real example does not measure prediction accuracy or guarantee all-upload behaviour."
+  ]
+}

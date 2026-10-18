@@ -1,12 +1,16 @@
 {
-  "status": "pending_colab_verification",
+  "status": "colab_verified_pending_hosted_acceptance",
   "public_url": null,
   "deployed_commit": null,
   "host": "Streamlit Community Cloud",
   "python": "3.13",
-  "enabled_models": ["v2-small"],
+  "enabled_models": [
+    "v2-small"
+  ],
   "host_verified_models": [],
-  "worked_example": null,
+  "worked_example": "deployment/reviewed/stage5_verification_20261018T202743076758Z/real_predictions/1_v2-small_input_png.png",
   "screenshot_or_recording": null,
-  "notes": "Source prepared only. Colab tests and real-model checks must precede hosted acceptance."
+  "notes": "Colab: 24 tests and four real CPU predictions passed at dedcdd309d1282c40f30d7e0a2ed759632a4a9bf. Small/Base/Large verified in Colab only. Public URL, actual host feasibility, deployed commit and screenshot remain pending; Small alone is enabled.",
+  "colab_evidence": "deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md",
+  "colab_execution_commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf"
 }

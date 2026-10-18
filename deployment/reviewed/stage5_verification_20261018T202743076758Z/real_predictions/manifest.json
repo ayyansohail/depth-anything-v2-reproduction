@@ -1,0 +1,24 @@
+{
+  "context": "Colab CPU application verification, not Streamlit Cloud acceptance",
+  "source_commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf",
+  "source_branch": "feat/streamlit-deployment",
+  "captured_at_utc": "2026-10-18T20:25:41.461197+00:00",
+  "python": "3.13.16",
+  "packages": {
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "transformers": "5.16.1",
+    "huggingface_hub": "1.33.0",
+    "numpy": "2.1.3",
+    "pillow": "11.3.0",
+    "matplotlib": "3.10.0",
+    "streamlit": "1.50.0",
+    "pytest": "8.4.2"
+  },
+  "model_revisions": {
+    "v2-small": "5426e4f0f36572d16453bbda7a8389317b1bef99",
+    "v2-base": "b1958afc87fb45a9e3746cb387596094de553ed8",
+    "v2-large": "7581137eff8d4e94f6e796d3baea0e9fa79b22d2"
+  },
+  "deployment_config_sha256": "942f64fa0a718d9b2f87cbdf0e5c4c7663c03fdc54afdfd089ef9d9542dc434d"
+}

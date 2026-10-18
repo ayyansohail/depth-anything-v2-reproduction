@@ -1,0 +1,53 @@
+CPU prediction 1/4: v2-small
+Waiting for the prediction service…
+Loading Small (24.8M); the first request may download weights…
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] The `use_fast` parameter is deprecated and will be removed in a future version. Use `backend="torchvision"` instead of `use_fast=True`, or `backend="pil"` instead of `use_fast=False`.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 287/287 [00:00<00:00, 4029.53it/s]
+Generating relative depth…
+CPU prediction 2/4: v2-base
+Waiting for the prediction service…
+Loading Base (97.5M); the first request may download weights…
+
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 287/287 [00:00<00:00, 3699.07it/s]
+Generating relative depth…
+CPU prediction 3/4: v2-large
+Waiting for the prediction service…
+Loading Large (335.3M); the first request may download weights…
+
+Loading weights:   0%|          | 0/503 [00:00<?, ?it/s]
+Loading weights:  77%|███████▋  | 386/503 [00:00<00:00, 3859.31it/s]
+Loading weights: 100%|██████████| 503/503 [00:00<00:00, 4638.31it/s]
+Generating relative depth…
+CPU prediction 4/4: v2-small
+Waiting for the prediction service…
+Loading Small (24.8M); the first request may download weights…
+
+Loading weights:   0%|          | 0/287 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 287/287 [00:00<00:00, 3641.36it/s]
+Generating relative depth…
+{
+  "passed": true,
+  "models": [
+    "v2-small",
+    "v2-base",
+    "v2-large"
+  ],
+  "predictions": 4,
+  "small_reload_after_large": true,
+  "retained_result_check": true,
+  "original_size": [
+    4032,
+    3024
+  ],
+  "output_size": [
+    1024,
+    768
+  ],
+  "note": "Process peak RSS is cumulative, not per-model memory. Colab success does not establish host feasibility."
+}
+Return the ZIP for review before deploying. This does not enable Base or Large publicly.
