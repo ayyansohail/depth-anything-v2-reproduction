@@ -3,8 +3,8 @@
 Branch: **feat/streamlit-deployment**, based on the completed Stage 4 branch at
 5f4c44c4ca4b0ecaaa480ace3f9788f0ba0f6b38. Main and the Stage 4 branch stay unchanged.
 
-Status: Colab verification accepted (24 tests; Small, Base, Large, then Small real CPU predictions). See [the evidence review](../deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md). Hosted acceptance remains pending.
-No live URL or successful deployment is claimed. The formal report is deferred.
+Status: Colab verification accepted (24 tests; Small, Base, Large, then Small real CPU predictions). See [the evidence review](../deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md). Initial Small hosted smoke passed at https://depth-anything-v2-repro.streamlit.app/ (prediction, repeat prediction, both downloads and saved screenshot). Extended hosted acceptance remains pending; see deployment/hosted/small_initial/verification.json.
+The public app opens without owner login and Small produces a result; Base/Large, extended acceptance and the exact runtime commit still need verification. The formal report is deferred.
 
 ## 1 Verify the application in Colab
 
@@ -127,5 +127,5 @@ installs, tests or inference were executed during source preparation.
 Stage 5 requires a working public URL, hosted verification of every enabled
 model, pinned dependency/startup documentation, a worked example, and a screenshot
 or recording. The implementation alone is not a completed deployment. Current
-acceptance status is recorded in `app/hosted_acceptance.json`; the URL stays null
-until one is deployed and checked. Keep Streamlit account credentials out of Git.
+acceptance status is recorded in `app/hosted_acceptance.json`; the exact runtime commit stays null
+until confirmed from host records. Keep Streamlit account credentials out of Git.

@@ -1,0 +1,31 @@
+{
+  "status": "initial_small_hosted_smoke_passed",
+  "public_url": "https://depth-anything-v2-repro.streamlit.app/",
+  "source_branch": "feat/streamlit-deployment",
+  "source_branch_tip_at_check": "b19712704ce34d8093a9ec56ad22ab7d3dccc302",
+  "deployed_commit_confirmed": false,
+  "model": "v2-small",
+  "model_label": "Small (24.8M)",
+  "public_browser_access_without_owner_login": true,
+  "input": "deployment/reviewed/stage5_verification_20261018T202743076758Z/real_predictions/1_v2-small_input_png.png",
+  "output_size": [
+    1024,
+    768
+  ],
+  "initial_prediction_seconds": 2.49,
+  "initial_model_preparation_seconds": 10.94,
+  "subsequent_observed_prediction_seconds": 2.37,
+  "colour_download": "colour.png",
+  "normalized_16bit_download": "relative_inverse_depth16.png",
+  "download_controls_retained_displayed_prediction_time": true,
+  "screenshot": "small_prediction.jpg",
+  "limitations": [
+    "This is an initial Small hosted smoke check, not completion of every Stage 5 acceptance check.",
+    "Exact deployed commit and host environment need confirmation from owner logs; branch tip is recorded separately.",
+    "Base and Large remain disabled and untested on the actual host.",
+    "Fresh-session/concurrent-session checks and hosted invalid-upload recovery remain pending.",
+    "No local inference, tests, training or package installation was performed."
+  ],
+  "explicit_repeat_prediction_seconds": 2.43,
+  "explicit_repeat_without_model_reload_passed": true
+}

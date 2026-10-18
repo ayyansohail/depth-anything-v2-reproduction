@@ -1,16 +1,19 @@
 {
-  "status": "colab_verified_pending_hosted_acceptance",
-  "public_url": null,
+  "status": "small_hosted_smoke_passed_pending_extended_checks",
+  "public_url": "https://depth-anything-v2-repro.streamlit.app/",
   "deployed_commit": null,
   "host": "Streamlit Community Cloud",
   "python": "3.13",
   "enabled_models": [
     "v2-small"
   ],
-  "host_verified_models": [],
+  "host_verified_models": [
+    "v2-small"
+  ],
   "worked_example": "deployment/reviewed/stage5_verification_20261018T202743076758Z/real_predictions/1_v2-small_input_png.png",
-  "screenshot_or_recording": null,
-  "notes": "Colab: 24 tests and four real CPU predictions passed at dedcdd309d1282c40f30d7e0a2ed759632a4a9bf. Small/Base/Large verified in Colab only. Public URL, actual host feasibility, deployed commit and screenshot remain pending; Small alone is enabled.",
+  "screenshot_or_recording": "deployment/hosted/small_initial/small_prediction.jpg",
+  "notes": "Public browser Small smoke passed: successful prediction, colour and 16-bit downloads inspected at 1024x768. Displayed prediction time stayed unchanged through both exact download controls. Initial model preparation 10.94 s and prediction 2.49 s; subsequent observed prediction 2.37 s. Exact deployed commit, extended host checks and Base/Large feasibility remain pending. All inference ran on Community Cloud. An explicit repeated Generate depth request also succeeded in 2.43 s without a model-preparation message; the screenshot captures that repeat.",
   "colab_evidence": "deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md",
-  "colab_execution_commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf"
+  "colab_execution_commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf",
+  "hosted_evidence": "deployment/hosted/small_initial/verification.json"
 }
