@@ -37,7 +37,7 @@ def main():
     if platform.python_version_tuple()[:2] != ("3", "13"):
         raise RuntimeError("Use Python 3.13 to match the planned hosted deployment.")
     packages = {name: metadata.version(name) for name in
-                ("torch", "transformers", "huggingface_hub", "numpy", "pillow", "matplotlib", "streamlit", "pytest")}
+                ("torch", "torchvision", "transformers", "huggingface_hub", "numpy", "pillow", "matplotlib", "streamlit", "pytest")}
     manifest = {"context": "Colab CPU application verification, not Streamlit Cloud acceptance",
                 "source_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
                 "source_branch": subprocess.check_output(["git", "branch", "--show-current"], cwd=ROOT, text=True).strip(),

@@ -21,7 +21,7 @@ No datasets, training, Stage 4 benchmarks or GPU are needed. The real-model chec
 may download several GB of weights to Colab. They are excluded from evidence ZIPs.
 If any step fails, stop and return the error or use the final cell to download
 available logs. An isolated environment avoids the notebook's preinstalled GPU
-torch/torchvision affecting the CPU stack. The owner should return Colab images
+torch/torchvision affecting the CPU stack. Verification subprocesses explicitly use the Agg plotting backend so Colab's inline backend does not leak into the isolated environment. The owner should return Colab images
 and logs; successful Colab checks do not prove hosting memory feasibility.
 
 ## 2 Deploy Small first on Community Cloud
@@ -37,7 +37,7 @@ After verification review:
 7. Deploy, retain build/runtime logs, and return the public URL or any error.
 
 The app-specific `app/requirements.txt` takes precedence over root research
-dependencies. It pins CPU torch, Transformers, Hugging Face Hub, NumPy, Pillow,
+dependencies. It pins matching CPU torch/torchvision, Transformers, Hugging Face Hub, NumPy, Pillow,
 Matplotlib and Streamlit. The entrypoint adds the checked-out src package path;
 it does not require an editable install. `.streamlit/config.toml` enables headless
 mode and a 10 MB uploader limit. Do not use an unpinned root requirements file
