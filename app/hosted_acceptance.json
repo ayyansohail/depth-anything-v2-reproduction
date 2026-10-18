@@ -12,8 +12,9 @@
   ],
   "worked_example": "deployment/reviewed/stage5_verification_20261018T202743076758Z/real_predictions/1_v2-small_input_png.png",
   "screenshot_or_recording": "deployment/hosted/small_initial/small_prediction.jpg",
-  "notes": "Public browser Small smoke passed: successful prediction, colour and 16-bit downloads inspected at 1024x768. Displayed prediction time stayed unchanged through both exact download controls. Initial model preparation 10.94 s and prediction 2.49 s; subsequent observed prediction 2.37 s. Exact deployed commit, extended host checks and Base/Large feasibility remain pending. All inference ran on Community Cloud. An explicit repeated Generate depth request also succeeded in 2.43 s without a model-preparation message; the screenshot captures that repeat.",
+  "notes": "Public browser Small smoke passed: successful prediction, colour and 16-bit downloads inspected at 1024x768. Displayed prediction time stayed unchanged through both exact download controls. Initial model preparation 10.94 s and prediction 2.49 s; subsequent observed prediction 2.37 s. Exact deployed commit, extended host checks and Base/Large feasibility remain pending. All inference ran on Community Cloud. An explicit repeated Generate depth request also succeeded in 2.43 s without a model-preparation message; the screenshot captures that repeat. Owner Edge verification: Small predictions 2.46 s and 2.40 s; supplied downloads have matching 1024x768 dimensions, RGB 8-bit colour and grayscale 16-bit depth headers. Extended checks remain pending.",
   "colab_evidence": "deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md",
   "colab_execution_commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf",
-  "hosted_evidence": "deployment/hosted/small_initial/verification.json"
+  "hosted_evidence": "deployment/hosted/small_initial/verification.json",
+  "edge_evidence": "deployment/hosted/edge_small/verification.json"
 }

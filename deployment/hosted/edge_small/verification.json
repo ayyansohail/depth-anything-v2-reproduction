@@ -1,0 +1,37 @@
+{
+  "status": "owner_reported_edge_small_predictions_and_downloads_passed",
+  "public_url": "https://depth-anything-v2-repro.streamlit.app/",
+  "browser": "Microsoft Edge",
+  "model": "v2-small",
+  "evidence_source": "Owner reported two hosted prediction timings and supplied both downloaded PNGs; file metadata inspected without running Python or inference locally.",
+  "prediction_seconds": [
+    2.46,
+    2.4
+  ],
+  "output_size": [
+    1024,
+    768
+  ],
+  "colour_png": {
+    "file": "colour.png",
+    "bit_depth": 8,
+    "colour_type": 2,
+    "sha256": "02f93320cce783c084cd7da199a7816fb28f11a9242fe3037208fda17c082c15"
+  },
+  "relative_inverse_depth_png": {
+    "file": "relative_inverse_depth16.png",
+    "bit_depth": 16,
+    "colour_type": 0,
+    "sha256": "4fc74867af3df6959c64cdf86a1d9c12d04d0765edc73a0ac797e4bec73e64a9"
+  },
+  "inspected_dimensions_and_formats_match_initial_hosted_downloads": true,
+  "pixel_accuracy_against_ground_truth_not_measured": true,
+  "download_no_inference_check": "Not explicitly reported for this Edge run; initial independent hosted smoke check already observed retained timing during downloads.",
+  "browser_note": "Owner reported app working on Edge, Safari and Chrome Incognito; regular Chrome profile remained on loading spinner. Owner prefers Edge and no Chrome setting changes.",
+  "pending": [
+    "Hosted invalid-upload handling and recovery",
+    "Fresh/concurrent-session checks",
+    "Exact deployed commit confirmation",
+    "Base/Large host feasibility"
+  ]
+}
