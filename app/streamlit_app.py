@@ -1,69 +1,91 @@
-"""Streamlit demo: upload an image -> depth map from Depth Anything V2 (S/B/L).
-Run:  streamlit run app/streamlit_app.py
-"""
-import io
-import time
+"""Streamlit entrypoint. Run from the repository: streamlit run app/streamlit_app.py."""
+from pathlib import Path
+import logging
+import sys
 
-import matplotlib
-import numpy as np
+ROOT = Path(__file__).resolve().parents[1]
+# Community Cloud executes this file without installing the repository package.
+for folder in (ROOT, ROOT / "src"):
+    if str(folder) not in sys.path:
+        sys.path.insert(0, str(folder))
+
 import streamlit as st
-import torch
-from PIL import Image
+from app.depth_service import (InputError, LABELS, ModelManager, PredictionError,
+                               load_config, prepare_image, update_result)
 
-from dav2.models import V2_KEYS, load_model, pick_device, sync
-
-matplotlib.use("Agg")
-st.set_page_config(page_title="Depth Anything V2 demo", layout="wide")
-LABELS = {"v2-small": "Small (24.8M)", "v2-base": "Base (97.5M)", "v2-large": "Large (335M)"}
+st.set_page_config(page_title="Depth Anything V2", layout="wide")
+logging.basicConfig(level=logging.INFO)
 
 
-@st.cache_resource(show_spinner="Loading model (first run downloads weights)...")
-def get_model(key: str):
-    m = load_model(key)
-    dummy = Image.fromarray(np.zeros((256, 256, 3), np.uint8))
-    m.predict(dummy)  # warm-up so the first user request is not timed with lazy init
-    return m
+@st.cache_resource(show_spinner=False)
+def prediction_service():
+    return ModelManager()
 
 
-def colorize(disp: np.ndarray) -> np.ndarray:
-    d = (disp - disp.min()) / max(float(disp.max() - disp.min()), 1e-8)
-    return (matplotlib.colormaps["magma"](d)[..., :3] * 255).astype(np.uint8)  # bright = near
+def main():
+    st.title("Depth Anything V2")
+    st.write("Turn one photo into a relative-depth map.")
+    st.caption("Brighter colours mean nearer objects. These predictions describe relative inverse depth, not distance in metres.")
+    try:
+        enabled, limits = load_config()
+    except (ValueError, OSError) as error:
+        logging.getLogger("dav2.deployment").exception("Invalid app configuration")
+        st.error("The app configuration needs attention. Please contact the app owner.")
+        return
+    with st.sidebar:
+        key = st.selectbox("Model size", enabled, format_func=LABELS.get, index=0)
+        st.caption("Small is the lowest-cost option. This CPU demo offers only models enabled for this host.")
+        st.caption("Models load on demand. Initial downloads can take longer than later predictions.")
+        with st.expander("About the models"):
+            st.write("Depth Anything V2 — Yang et al., NeurIPS 2024. Released pretrained checkpoints; no training in this app.")
+            st.markdown("[Paper and official code](https://github.com/DepthAnything/Depth-Anything-V2)")
+            st.caption("Small: Apache-2.0. Base and Large: CC-BY-NC-4.0, for non-commercial use.")
+    upload = st.file_uploader("Upload a photo", type=["jpg", "jpeg", "png"],
+                              help="JPG/PNG, up to 10 MB and 16 megapixels; aspect ratio up to 2:1.")
+    content = upload.getvalue() if upload is not None else b""
+    filename = upload.name if upload is not None else ""
+    manager = prediction_service()
+    # This call only invalidates stale results or reads a completed result.
+    update_result(st.session_state, content, filename, key, manager)
+    if upload is None:
+        st.info("Upload a JPG or PNG image to begin.")
+        return
+    try:
+        prepared = prepare_image(content, filename, limits)
+    except InputError as error:
+        st.error(str(error))
+        return
+    if prepared.resized:
+        st.caption(f"This image is resized from {prepared.original_size[0]} × {prepared.original_size[1]} to {prepared.image.width} × {prepared.image.height} for this demo.")
+    if st.button("Generate depth", type="primary"):
+        progress = st.empty()
+        try:
+            with st.spinner("Preparing your depth map…"):
+                update_result(st.session_state, content, filename, key, manager,
+                              submitted=True, limits=limits, on_status=progress.info)
+        except (InputError, PredictionError) as error:
+            st.error(str(error))
+        finally:
+            progress.empty()
+    result = st.session_state.get("result")
+    if result is None:
+        st.image(prepared.image, caption="Input photo", use_container_width=True)
+        return
+    left, right = st.columns(2)
+    left.image(result["input_png"], caption="Input photo", use_container_width=True)
+    right.image(result["colour_png"], caption=f"Relative depth · {LABELS[result['key']]}", use_container_width=True)
+    st.caption(f"Prediction: {result['prediction_ms'] / 1000:.2f} s · CPU · {result['params_m']:.1f}M parameters. Timing excludes model loading, upload and display.")
+    if result["loaded_this_request"]:
+        st.caption(f"Model preparation for this request: {result['model_load_ms'] / 1000:.2f} s.")
+    if result["constant"]:
+        st.warning("The model returned a nearly constant map. Try a different photo.")
+    a, b = st.columns(2)
+    a.download_button("Download colour PNG", result["colour_png"],
+                      file_name=f"depth_{result['key']}.png", mime="image/png", on_click="ignore")
+    b.download_button("Download normalized 16-bit PNG", result["depth16_png"],
+                      file_name=f"relative_inverse_depth16_{result['key']}.png", mime="image/png", on_click="ignore")
+    st.caption("The 16-bit PNG is normalized relative inverse depth: 0 is farther, 65535 is nearer within this image. Values are not metres and cannot be compared as distances between photos.")
 
 
-def run(key: str, img: Image.Image):
-    m = get_model(key)
-    sync(m.device); t0 = time.perf_counter()
-    disp = m.predict(img)
-    sync(m.device)
-    return m, disp, (time.perf_counter() - t0) * 1000
-
-
-def png_bytes(arr: np.ndarray) -> bytes:
-    buf = io.BytesIO(); Image.fromarray(arr).save(buf, format="PNG"); return buf.getvalue()
-
-
-st.title("Depth Anything V2 - monocular depth from one photo")
-st.caption("Pretrained checkpoints, zero-shot, no training. Output is *relative* depth (bright = near), not metres.")
-
-with st.sidebar:
-    key = st.selectbox("Model size", V2_KEYS, format_func=LABELS.get, index=0)
-    compare = st.checkbox("Compare all three sizes", value=False)
-    st.write(f"Device: `{pick_device()}`")
-
-up = st.file_uploader("Upload a .jpg or .png", type=["jpg", "jpeg", "png"])
-if up is None:
-    st.info("Upload an image to begin.")
-    st.stop()
-
-img = Image.open(up).convert("RGB")
-keys = V2_KEYS if compare else [key]
-cols = st.columns(1 + len(keys))
-cols[0].image(img, caption=f"Input ({img.size[0]}x{img.size[1]})", use_container_width=True)
-for col, k in zip(cols[1:], keys):
-    m, disp, ms = run(k, img)
-    col.image(colorize(disp), caption=f"{LABELS[k]} - {ms:.0f} ms", use_container_width=True)
-    col.download_button("Download colour PNG", png_bytes(colorize(disp)), f"depth_{k}.png", "image/png", key=f"c{k}")
-    d16 = ((disp - disp.min()) / max(float(disp.max() - disp.min()), 1e-8) * 65535).astype(np.uint16)
-    b = io.BytesIO(); Image.fromarray(d16).save(b, format="PNG")
-    col.download_button("Download 16-bit PNG", b.getvalue(), f"depth16_{k}.png", "image/png", key=f"r{k}")
-    col.caption(f"{m.params_m:.1f}M params | device: {m.device}")
+if __name__ == "__main__":
+    main()

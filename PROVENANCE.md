@@ -57,3 +57,13 @@ Branch: feat/computational-analysis-experiment, created from main at 564b81ff1f6
 - Historical scene-comparison scripts and outputs remain for traceability; the primary Stage 4 experiment is now Option F. The new uncertainty calculation clusters DA-2K annotations by image instead of resampling individual pairs as independent observations.
 - No changes to src/dav2 model or metric implementations, no training/fine-tuning, no local tests or inference, and no report editing are part of this preparation.
 - Status: completed Colab run stage4_20261018T155835007735Z imported under experiment/reviewed/. Execution commit remains 0d6a6be3eff111dfa81186a5bebd2327c053a2c0; the later import commit only records evidence and documentation. Preflight: 22 tests passed. Final analysis validated 24 blocks and 1,200 timings. Figures inspected, original ZIPs retained; interpretation is in experiment/FINDINGS.md.
+
+## Stage 5 Streamlit application
+
+Branch feat/streamlit-deployment is based on completed Stage 4 commit 5f4c44c4ca4b0ecaaa480ace3f9788f0ba0f6b38.
+
+- app/depth_service.py, the revised app/streamlit_app.py, deployment configuration, tests/test_deployment.py, scripts/verify_deployment.py, notebook and deployment guide: AI-assisted preparation using Codex, pending team/Colab review and actual hosted acceptance.
+- src/dav2/models.py adds optional immutable revisions for weights and processor, explicit FP32 and slow/Pillow processing when pinned. Existing callers without a revision retain their loading behaviour; metric and model architecture implementations are unchanged.
+- app/requirements.txt pins a Linux CPU stack for Python 3.13. New Colab verification uses an isolated environment and captures its actual versions; this does not reconstruct historical accuracy versions.
+- Small remains the only public model until host verification. Base and Large remain target models in the Colab verification, not claims of hosted support.
+- No local Python, tests, dependency installation, training or inference was run during preparation. No formal report was edited. Live URL, deployed commit, verified models and screenshot evidence remain null/pending in app/hosted_acceptance.json until actually checked.

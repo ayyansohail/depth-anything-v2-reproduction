@@ -6,6 +6,18 @@ Team: Ayyan Sohail, Omar Khan, Maaz Zubairi.
 **This project uses the authors' pretrained checkpoints (Small / Base / Large). No model is trained.**
 The work is the evaluation pipeline, the metric code, a paper-specific experiment, and a deployed demo.
 
+## Stage 5 deployment branch
+
+**Branch: `feat/streamlit-deployment`. Streamlit Community Cloud, CPU, Small first.**
+
+Implementation prepared; Colab verification and hosted acceptance are pending.
+No public app URL has been verified yet. Start with the
+[Stage 5 Colab notebook](https://colab.research.google.com/github/maaz-zubairi/depth-anything-v2-repro/blob/feat/streamlit-deployment/notebooks/stage5_deployment_verification.ipynb),
+then follow [the deployment guide](docs/DEPLOYMENT.md). The initial hosted model
+configuration exposes Small only; Base and Large require host-specific checks.
+Predictions run only when Generate depth is clicked; downloads retain results.
+Outputs are relative inverse depth, not metres. Report editing remains deferred.
+
 ## Stage 4 experiment branch
 
 **Option F: computational analysis. Branch: `feat/computational-analysis-experiment`.**
@@ -59,7 +71,7 @@ streamlit run app/streamlit_app.py                       # the deployment
 - Start: `streamlit run app/streamlit_app.py`
 - Dependencies: `requirements.txt`
 - Input: `.jpg` / `.png` upload. Output: input next to colourised depth map (bright = near), latency in ms, model size, PNG downloads.
-- Worked example + screenshot: `docs/` (add before submission)
+- Hosted acceptance, worked example, screenshot and public URL: see `docs/DEPLOYMENT.md` and `app/hosted_acceptance.json` (pending).
 
 ## Licences
 Depth-Anything-V2 Small is Apache-2.0; Base and Large are CC-BY-NC-4.0 (non-commercial). Fine for coursework; do not ship them in a commercial product.

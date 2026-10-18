@@ -76,11 +76,15 @@ class DepthModel:
         return self.model(pixel_values=pixel_values).predicted_depth
 
 
-def load_model(key: str, device: str | None = None) -> DepthModel:
+def load_model(key: str, device: str | None = None, *, revision: str | None = None) -> DepthModel:
     if key not in REGISTRY:
         raise KeyError(f"unknown model '{key}'. choose from {list(REGISTRY)}")
     device = device or pick_device()
     repo = REGISTRY[key]
-    processor = AutoImageProcessor.from_pretrained(repo)
-    model = AutoModelForDepthEstimation.from_pretrained(repo).to(device).eval()
+    # Preserve legacy callers; deployments can pin both weights and processor.
+    options = {"revision": revision} if revision is not None else {}
+    processor_options = options | ({"use_fast": False} if revision is not None else {})
+    processor = AutoImageProcessor.from_pretrained(repo, **processor_options)
+    model_options = options | ({"torch_dtype": torch.float32} if revision is not None else {})
+    model = AutoModelForDepthEstimation.from_pretrained(repo, **model_options).to(device).eval()
     return DepthModel(key=key, device=device, processor=processor, model=model)

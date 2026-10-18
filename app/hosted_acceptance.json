@@ -1,0 +1,12 @@
+{
+  "status": "pending_colab_verification",
+  "public_url": null,
+  "deployed_commit": null,
+  "host": "Streamlit Community Cloud",
+  "python": "3.13",
+  "enabled_models": ["v2-small"],
+  "host_verified_models": [],
+  "worked_example": null,
+  "screenshot_or_recording": null,
+  "notes": "Source prepared only. Colab tests and real-model checks must precede hosted acceptance."
+}
