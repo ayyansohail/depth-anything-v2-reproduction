@@ -25,7 +25,7 @@ The original bicubic output resize produced negative disparity values,
 consistent with interpolation overshoot. On five fixed NYU images, Large had
 386 negative pixels in total;
 bilinear output resize reduced this to zero. The code change is
-[`d9b8c0e`](https://github.com/maaz-zubairi/depth-anything-v2-repro/commit/d9b8c0e).
+[`d9b8c0e`](https://github.com/ayyansohail/depth-anything-v2-reproduction/commit/d9b8c0e).
 On the 10-image check, bilinear alone changed the metrics only slightly and
 Large still had the worst AbsRel. Adding the Eigen crop reduced Large's AbsRel
 from 0.08648 to 0.04468 and removed that ranking anomaly. The crop changes

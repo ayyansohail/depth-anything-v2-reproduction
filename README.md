@@ -10,7 +10,7 @@ The work is the evaluation pipeline, the metric code, a paper-specific experimen
 
 **Option F: computational analysis. Branch: `feat/computational-analysis-experiment`.**
 
-Start with the [Stage 4 Colab notebook](https://colab.research.google.com/github/maaz-zubairi/depth-anything-v2-repro/blob/feat/computational-analysis-experiment/notebooks/stage4_computational_analysis.ipynb).
+Start with the [Stage 4 Colab notebook](https://colab.research.google.com/github/ayyansohail/depth-anything-v2-reproduction/blob/feat/computational-analysis-experiment/notebooks/stage4_computational_analysis.ipynb).
 The experiment is **complete and reviewed**: 22 tests passed and 24 blocks / 1,200 timings validated in Colab. Read [the findings](experiment/FINDINGS.md) and [reviewed evidence](experiment/reviewed/stage4_20261018T155835007735Z/REVIEW.md). The notebook remains available for reproduction; choose a T4 GPU and follow its staged instructions.
 See [experiment/README.md](experiment/README.md) for the paper-specific question,
 legacy evidence, protocol, limitations, and submission requirements. The older
@@ -32,7 +32,7 @@ outdoor evaluation. Report corrections are in [Stage 3 report notes](docs/STAGE3
 
 ## Quickstart
 ```bash
-git clone https://github.com/maaz-zubairi/depth-anything-v2-repro.git && cd depth-anything-v2-repro
+git clone https://github.com/ayyansohail/depth-anything-v2-reproduction.git && cd depth-anything-v2-reproduction
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt && pip install -e .
 pytest -q                                                # metric unit tests (no GPU, no data needed)
