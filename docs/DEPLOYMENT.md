@@ -8,7 +8,7 @@ No live URL or successful deployment is claimed. The formal report is deferred.
 
 ## 1 Verify the application in Colab
 
-Open [the Stage 5 verification notebook](https://colab.research.google.com/github/maaz-zubairi/depth-anything-v2-repro/blob/feat/streamlit-deployment/notebooks/stage5_deployment_verification.ipynb).
+Open [the Stage 5 verification notebook](https://colab.research.google.com/github/ayyansohail/depth-anything-v2-reproduction/blob/feat/streamlit-deployment/notebooks/stage5_deployment_verification.ipynb).
 Use a fresh CPU runtime with Python 3.13. Execute its cells individually:
 
 1. Clone this branch and create the isolated CPU environment. If standard venv fails while bootstrapping pip, the notebook preserves that failure and falls back to virtualenv 20.35.4 in a separate workspace directory. The bootstrap tool is installed into a temporary target directory, not the notebook environment.
@@ -30,7 +30,7 @@ After verification review:
 
 1. Sign into [Streamlit Community Cloud](https://share.streamlit.io/) and connect the GitHub account with access to this public repository.
 2. Choose Create app, then the existing-app flow.
-3. Repository: `maaz-zubairi/depth-anything-v2-repro`.
+3. Repository: `ayyansohail/depth-anything-v2-reproduction`.
 4. Branch: `feat/streamlit-deployment`.
 5. Main file path: `app/streamlit_app.py`.
 6. Advanced settings: Python **3.13**. No token or other secret is required for these public checkpoints.
