@@ -1,5 +1,5 @@
 {
-  "status": "owner_reported_edge_large_repeated_predictions_and_downloads_passed",
+  "status": "owner_reported_edge_large_repeated_predictions_downloads_and_switch_back_passed",
   "public_url": "https://depth-anything-v2-repro.streamlit.app/",
   "browser": "Microsoft Edge",
   "model": "v2-large",
@@ -26,10 +26,12 @@
     "sha256": "0b34ee0e4b8e01faa54a581f6e11b9a67748e5d91411859e2bd8fc06f7317bd5"
   },
   "pending": [
-    "Large-to-Small switch and recovery",
     "Fresh/concurrent-session checks",
     "Exact runtime commit confirmation",
     "Large loading time was not supplied"
   ],
-  "note": "Two successful requests on the supplied example establish a hosted smoke pass; they are not a benchmark or proof of memory feasibility for every allowed upload."
+  "note": "Two successful requests on the supplied example establish a hosted smoke pass; they are not a benchmark or proof of memory feasibility for every allowed upload.",
+  "switch_back_to_small_owner_confirmed": true,
+  "stale_large_result_cleared_owner_confirmed": true,
+  "small_prediction_after_switch_back_owner_confirmed": true
 }

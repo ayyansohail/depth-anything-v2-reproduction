@@ -129,3 +129,11 @@ model, pinned dependency/startup documentation, a worked example, and a screensh
 or recording. The implementation alone is not a completed deployment. Current
 acceptance status is recorded in `app/hosted_acceptance.json`; the exact runtime commit stays null
 until confirmed from host records. Keep Streamlit account credentials out of Git.
+
+## Final session and deployed-build checks
+
+The About the models expander shows the running checkout's full Git commit and Python version. Capture that build ID from the actual host, rather than assuming the branch tip is deployed. If Git metadata is unavailable, retain the displayed unavailable status and use owner build records.
+
+In Edge InPrivate, open the public URL without signing in, confirm Small is the default, upload the worked example and complete a prediction. Keep that session open alongside the normal Edge session. Start a Base prediction in normal Edge, then immediately start a Small prediction in InPrivate. Confirm both finish with correct independent model labels and no crash; record whether one showed the waiting message. A successful functional overlap check does not measure host RSS or prove no simultaneous model allocations; lock/release behaviour was tested in Colab.
+
+Return the displayed build ID and Python version, fresh-session success, both-session success and a screenshot including a completed result and About the models.

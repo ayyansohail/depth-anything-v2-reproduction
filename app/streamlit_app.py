@@ -1,6 +1,8 @@
 """Streamlit entrypoint. Run from the repository: streamlit run app/streamlit_app.py."""
 from pathlib import Path
 import logging
+import platform
+import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,6 +24,16 @@ def prediction_service():
     return ModelManager()
 
 
+def deployment_revision():
+    """Read the host checkout for deployment troubleshooting; no model work."""
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True,
+            stderr=subprocess.DEVNULL, timeout=2,
+        ).strip()
+    except (OSError, subprocess.SubprocessError):
+        return "unavailable"
+
 def main():
     st.title("Depth Anything V2")
     st.write("Turn one photo into a relative-depth map.")
@@ -40,6 +52,8 @@ def main():
             st.write("Depth Anything V2 — Yang et al., NeurIPS 2024. Released pretrained checkpoints; no training in this app.")
             st.markdown("[Paper and official code](https://github.com/DepthAnything/Depth-Anything-V2)")
             st.caption("Small: Apache-2.0. Base and Large: CC-BY-NC-4.0, for non-commercial use.")
+            st.caption(f"Deployment build: {deployment_revision()}")
+            st.caption(f"Python: {platform.python_version()}")
     upload = st.file_uploader("Upload a photo", type=["jpg", "jpeg", "png"],
                               help="JPG/PNG, up to 10 MB and 16 megapixels; aspect ratio up to 2:1.")
     content = upload.getvalue() if upload is not None else b""

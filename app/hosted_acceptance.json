@@ -1,5 +1,5 @@
 {
-  "status": "all_models_hosted_smoke_passed_pending_final_checks",
+  "status": "all_models_and_switching_passed_pending_session_and_build_checks",
   "public_url": "https://depth-anything-v2-repro.streamlit.app/",
   "deployed_commit": null,
   "host": "Streamlit Community Cloud",
@@ -16,7 +16,7 @@
   ],
   "worked_example": "deployment/reviewed/stage5_verification_20261018T202743076758Z/real_predictions/1_v2-small_input_png.png",
   "screenshot_or_recording": "deployment/hosted/small_initial/small_prediction.jpg",
-  "notes": "All three models passed repeated hosted prediction/download smoke checks in owner Edge testing. Times: Small 2.46/2.40 s; Base 8.03/7.97 s; Large 23.30/23.45 s. Supplied files for every model are 1024x768 RGB 8-bit colour and grayscale 16-bit relative inverse depth. Small invalid-upload recovery and Base-to-Small switching passed. Independent public-browser Small evidence includes screenshot, initial loading and download retention. Large-to-Small switching, extended session checks and exact runtime commit confirmation remain pending. No local inference or tests were run.",
+  "notes": "All three models passed repeated hosted predictions and PNG downloads. Owner Edge times: Small 2.46/2.40 s; Base 8.03/7.97 s; Large 23.30/23.45 s. All supplied output PNGs are 1024x768 with RGB 8-bit colour and grayscale 16-bit relative inverse depth. Small invalid-upload recovery, Base-to-Small and Large-to-Small switching with stale-result clearing passed. Independent public-browser Small screenshot and download-retention evidence saved. Remaining: fresh/concurrent-session checks and exact deployed commit from the new About the models build display. No local inference or tests were run.",
   "colab_evidence": "deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md",
   "colab_execution_commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf",
   "hosted_evidence": "deployment/hosted/small_initial/verification.json",
