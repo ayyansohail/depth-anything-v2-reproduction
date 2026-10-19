@@ -1,0 +1,36 @@
+{
+  "status": "owner_reported_edge_base_repeated_predictions_and_downloads_passed",
+  "public_url": "https://depth-anything-v2-repro.streamlit.app/",
+  "browser": "Microsoft Edge",
+  "model": "v2-base",
+  "evidence_source": "Owner reported hosted prediction timings and supplied downloaded files. File signatures, dimensions and PNG header formats were inspected without local model or Python execution.",
+  "prediction_seconds": [
+    8.03,
+    7.97
+  ],
+  "model_preparation_seconds": null,
+  "output_size": [
+    1024,
+    768
+  ],
+  "colour_png": {
+    "file": "colour.png",
+    "bit_depth": 8,
+    "colour_type": 2,
+    "sha256": "59a484acf121a1d63bee8161bc673ea956cb2693f3e6a070a65efe7cf37333b0"
+  },
+  "relative_inverse_depth_png": {
+    "file": "relative_inverse_depth16.png",
+    "bit_depth": 16,
+    "colour_type": 0,
+    "sha256": "9ae5493fa2d22baadf02fa024767e17279f2bfe15cefd698bd47218cb4763a33"
+  },
+  "pending": [
+    "Switch back from Base to Small and confirm stale results clear",
+    "Base loading time was not supplied",
+    "Fresh/concurrent-session checks",
+    "Exact deployed commit confirmation",
+    "Large host feasibility"
+  ],
+  "note": "Single-example hosted smoke checks; not a latency benchmark, memory measurement, or ground-truth accuracy evaluation."
+}
