@@ -10,12 +10,17 @@ The work is the evaluation pipeline, the metric code, a paper-specific experimen
 
 **Branch: `feat/streamlit-deployment`. Streamlit Community Cloud, CPU, Small first.**
 
-Colab verification is complete: **24 tests and four real CPU predictions passed**, including Small, Base, Large and switching back to Small. See [reviewed evidence](deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md). The [public Small app](https://depth-anything-v2-repro.streamlit.app/) passed an initial hosted prediction-and-download smoke check; extended hosted acceptance remains pending.
-See [hosted smoke evidence](deployment/hosted/small_initial/verification.json) and [a successful prediction screenshot](deployment/hosted/small_initial/small_prediction.jpg). For reproduction, start with the
-[Stage 5 Colab notebook](https://colab.research.google.com/github/ayyansohail/depth-anything-v2-reproduction/blob/feat/streamlit-deployment/notebooks/stage5_deployment_verification.ipynb),
-then follow [the deployment guide](docs/DEPLOYMENT.md). Small remains the default. Small, Base and Large have passed repeated hosted prediction/download checks. Switching from Base and Large back to Small passed; fresh/concurrent-session and deployed-build checks remain pending.
-Predictions run only when Generate depth is clicked; downloads retain results.
-Outputs are relative inverse depth, not metres. Report editing remains deferred.
+Colab verification passed **24 tests** and four real CPU predictions. The [public app](https://depth-anything-v2-repro.streamlit.app/) supports **Small (default), Base and Large**. All three passed repeated hosted predictions and both PNG downloads; invalid-upload recovery, switching back to Small, a fresh public session and two-session functional checks also passed. The literal deployed-build record is the remaining administrative item.
+
+See [hosted acceptance and worked example](deployment/hosted/ACCEPTANCE.md), [the saved screenshot](deployment/hosted/small_initial/small_prediction.jpg), and [Colab evidence](deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md). For reproduction, use the [Stage 5 Colab notebook](https://colab.research.google.com/github/ayyansohail/depth-anything-v2-reproduction/blob/feat/streamlit-deployment/notebooks/stage5_deployment_verification.ipynb) and [deployment guide](docs/DEPLOYMENT.md).
+
+| Model | Hosted prediction observations for the worked example |
+|---|---|
+| Small | 2.46 s / 2.40 s |
+| Base | 8.03 s / 7.97 s |
+| Large | 23.30 s / 23.45 s |
+
+These are individual CPU requests, not benchmark averages or speed guarantees. Predictions run on Generate depth; downloads retain results. Outputs are relative inverse depth, brighter means nearer, not metres. The app accepts JPG/PNG within documented limits and provides colour and normalized 16-bit PNG downloads. Formal report editing remains deferred.
 
 ## Stage 4 experiment branch
 

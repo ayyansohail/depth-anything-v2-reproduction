@@ -10,5 +10,5 @@
     "max_edge": 1024,
     "max_aspect_ratio": 2.0
   },
-  "status": "All three models passed repeated hosted prediction/download smoke checks; final switching and session checks pending; Small default"
+  "status": "All three models passed guided hosted functional checks; Small default; deployment build record pending"
 }

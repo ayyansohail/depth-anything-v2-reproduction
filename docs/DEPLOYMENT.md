@@ -3,8 +3,7 @@
 Branch: **feat/streamlit-deployment**, based on the completed Stage 4 branch at
 5f4c44c4ca4b0ecaaa480ace3f9788f0ba0f6b38. Main and the Stage 4 branch stay unchanged.
 
-Status: Colab verification accepted (24 tests; Small, Base, Large, then Small real CPU predictions). See [the evidence review](../deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md). Initial Small hosted smoke passed at https://depth-anything-v2-repro.streamlit.app/ (prediction, repeat prediction, both downloads and saved screenshot). Extended hosted acceptance remains pending; see deployment/hosted/small_initial/verification.json.
-The public app opens without owner login and Small produces a result; Base/Large, extended acceptance and the exact runtime commit still need verification. The formal report is deferred.
+Status: Colab checks and all guided hosted functional checks passed for Small, Base and Large. Public app: https://depth-anything-v2-repro.streamlit.app/. See [the acceptance record](../deployment/hosted/ACCEPTANCE.md). The exact deployed-build/Python transcription remains pending. The formal report is deferred.
 
 ## 1 Verify the application in Colab
 
@@ -76,7 +75,7 @@ before loading another. Only image/output bytes and scalar metadata are stored
 in per-user session state. Model weights can remain in the host's disk cache;
 multiple model instances are not deliberately retained in RAM.
 
-`app/deployment.json` currently enables Small, Base and Large, each with successful repeated hosted prediction/download smoke checks. Base-to-Small switching has passed; Large-to-Small and final checks remain. Small remains
+`app/deployment.json` currently enables Small, Base and Large, each with successful repeated hosted prediction/download smoke checks. Base-to-Small, Large-to-Small, fresh-session and two-session functional checks passed; the deployed-build record remains pending. Small remains
 the default. After a successful Small hosted check, the assistant enables Base
 in a reviewed commit, the owner repeats hosted tests, then Large is tried in
 another reviewed commit. A failing candidate is disabled again. CPU out-of-memory

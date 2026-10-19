@@ -1,5 +1,5 @@
 {
-  "status": "all_models_and_switching_passed_pending_session_and_build_checks",
+  "status": "functional_acceptance_passed_pending_build_record",
   "public_url": "https://depth-anything-v2-repro.streamlit.app/",
   "deployed_commit": null,
   "host": "Streamlit Community Cloud",
@@ -16,12 +16,14 @@
   ],
   "worked_example": "deployment/reviewed/stage5_verification_20261018T202743076758Z/real_predictions/1_v2-small_input_png.png",
   "screenshot_or_recording": "deployment/hosted/small_initial/small_prediction.jpg",
-  "notes": "All three models passed repeated hosted predictions and PNG downloads. Owner Edge times: Small 2.46/2.40 s; Base 8.03/7.97 s; Large 23.30/23.45 s. All supplied output PNGs are 1024x768 with RGB 8-bit colour and grayscale 16-bit relative inverse depth. Small invalid-upload recovery, Base-to-Small and Large-to-Small switching with stale-result clearing passed. Independent public-browser Small screenshot and download-retention evidence saved. Remaining: fresh/concurrent-session checks and exact deployed commit from the new About the models build display. No local inference or tests were run.",
+  "notes": "Hosted functional acceptance passed: public access; Small/Base/Large repeated predictions and downloads; invalid-upload rejection/recovery; Base-to-Small and Large-to-Small switching; owner-confirmed Edge InPrivate fresh prediction and two overlapping Edge sessions completing with correct labels. Download header inspection confirmed all supplied files at 1024x768, RGB 8-bit colour or grayscale 16-bit relative inverse depth. Exact running commit and literal Python values from About the models remain to be copied into the deployment record. No local inference or tests were run.",
   "colab_evidence": "deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md",
   "colab_execution_commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf",
   "hosted_evidence": "deployment/hosted/small_initial/verification.json",
   "edge_evidence": "deployment/hosted/edge_small/verification.json",
   "candidate_models_pending_host_verification": [],
   "base_evidence": "deployment/hosted/edge_base/verification.json",
-  "large_evidence": "deployment/hosted/edge_large/verification.json"
+  "large_evidence": "deployment/hosted/edge_large/verification.json",
+  "session_evidence": "deployment/hosted/final_sessions.json",
+  "acceptance_review": "deployment/hosted/ACCEPTANCE.md"
 }
