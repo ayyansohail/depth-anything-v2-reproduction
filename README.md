@@ -75,7 +75,7 @@ streamlit run app/streamlit_app.py                       # the deployment
 - Start: `streamlit run app/streamlit_app.py`
 - Dependencies: `requirements.txt`
 - Input: `.jpg` / `.png` upload. Output: input next to colourised depth map (bright = near), latency in ms, model size, PNG downloads.
-- Hosted acceptance, worked example, screenshot and public URL: see `docs/DEPLOYMENT.md` and `app/hosted_acceptance.json` (pending).
+- Hosted acceptance, worked example, screenshot and public URL: see `docs/DEPLOYMENT.md` and `app/hosted_acceptance.json` (complete).
 
 ## Licences
 Depth-Anything-V2 Small is Apache-2.0; Base and Large are CC-BY-NC-4.0 (non-commercial). Fine for coursework; do not ship them in a commercial product.
