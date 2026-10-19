@@ -88,7 +88,7 @@ the exact current revision. This limitation stays visible in generated tables.
 The returned run meets the completion requirements: successful pilot, full benchmark, passing Colab checks,
 validated analysis, and reviewed artifacts committed under `experiment/reviewed/`.
 Keep source and results on this branch for submission. Submit its direct URL:
-https://github.com/maaz-zubairi/depth-anything-v2-repro/tree/feat/computational-analysis-experiment
+https://github.com/ayyansohail/depth-anything-v2-reproduction/tree/feat/computational-analysis-experiment
 
 No local Python, tests, installation or model execution was used to prepare this
 implementation. Colab checks passed for the archived execution. Report
