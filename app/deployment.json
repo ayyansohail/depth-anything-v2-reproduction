@@ -1,7 +1,8 @@
 {
   "enabled_models": [
     "v2-small",
-    "v2-base"
+    "v2-base",
+    "v2-large"
   ],
   "limits": {
     "max_upload_bytes": 10485760,
@@ -9,5 +10,5 @@
     "max_edge": 1024,
     "max_aspect_ratio": 2.0
   },
-  "status": "Small hosted checks passed; Base enabled temporarily for actual-host verification; Large disabled"
+  "status": "Small and Base hosted smoke checks passed; Large enabled as actual-host verification candidate; Small remains default"
 }

@@ -1,5 +1,5 @@
 {
-  "status": "owner_reported_edge_base_repeated_predictions_and_downloads_passed",
+  "status": "owner_reported_edge_base_repeated_predictions_downloads_and_switch_back_passed",
   "public_url": "https://depth-anything-v2-repro.streamlit.app/",
   "browser": "Microsoft Edge",
   "model": "v2-base",
@@ -26,11 +26,14 @@
     "sha256": "9ae5493fa2d22baadf02fa024767e17279f2bfe15cefd698bd47218cb4763a33"
   },
   "pending": [
-    "Switch back from Base to Small and confirm stale results clear",
     "Base loading time was not supplied",
     "Fresh/concurrent-session checks",
     "Exact deployed commit confirmation",
     "Large host feasibility"
   ],
-  "note": "Single-example hosted smoke checks; not a latency benchmark, memory measurement, or ground-truth accuracy evaluation."
+  "note": "Single-example hosted smoke checks; not a latency benchmark, memory measurement, or ground-truth accuracy evaluation.",
+  "switch_back_to_small_owner_confirmed": true,
+  "stale_base_result_cleared_owner_confirmed": true,
+  "small_prediction_after_switch_back_owner_confirmed": true,
+  "switch_back_prediction_seconds": null
 }

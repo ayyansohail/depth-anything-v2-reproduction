@@ -1,12 +1,13 @@
 {
-  "status": "small_base_hosted_smoke_passed_pending_switch_back_and_extended_checks",
+  "status": "small_base_verified_large_host_check_in_progress",
   "public_url": "https://depth-anything-v2-repro.streamlit.app/",
   "deployed_commit": null,
   "host": "Streamlit Community Cloud",
   "python": "3.13",
   "enabled_models": [
     "v2-small",
-    "v2-base"
+    "v2-base",
+    "v2-large"
   ],
   "host_verified_models": [
     "v2-small",
@@ -14,11 +15,13 @@
   ],
   "worked_example": "deployment/reviewed/stage5_verification_20261018T202743076758Z/real_predictions/1_v2-small_input_png.png",
   "screenshot_or_recording": "deployment/hosted/small_initial/small_prediction.jpg",
-  "notes": "Small and Base each passed repeated hosted predictions and PNG-download smoke checks. Owner Edge timings: Small 2.46/2.40 s; Base 8.03/7.97 s. Both models produced 1024x768 RGB 8-bit colour and grayscale 16-bit depth files. Small invalid-upload rejection and recovery also passed. Independent public-browser Small evidence includes screenshot, first-use preparation and retained download results. Base-to-Small switching, extended fresh/concurrent-session checks and exact runtime commit confirmation remain pending. Large remains disabled. All inference ran in Colab or Community Cloud; none locally.",
+  "notes": "Small and Base each passed repeated hosted predictions and PNG-download smoke checks. Owner Edge timings: Small 2.46/2.40 s; Base 8.03/7.97 s. Both produced 1024x768 RGB 8-bit colour and grayscale 16-bit depth files. Small invalid-upload rejection/recovery passed. Owner confirmed Base-to-Small switching, stale-result clearing and successful Small inference afterward; its time was not supplied. Independent public-browser Small evidence includes screenshot, first-use preparation and retained download results. Large is enabled as a candidate, not yet verified on the host. Extended fresh/concurrent-session checks and exact runtime commit confirmation remain pending. All inference ran in Colab or Community Cloud; none locally.",
   "colab_evidence": "deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md",
   "colab_execution_commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf",
   "hosted_evidence": "deployment/hosted/small_initial/verification.json",
   "edge_evidence": "deployment/hosted/edge_small/verification.json",
-  "candidate_models_pending_host_verification": [],
+  "candidate_models_pending_host_verification": [
+    "v2-large"
+  ],
   "base_evidence": "deployment/hosted/edge_base/verification.json"
 }
