@@ -1,0 +1,35 @@
+{
+  "status": "owner_reported_edge_large_repeated_predictions_and_downloads_passed",
+  "public_url": "https://depth-anything-v2-repro.streamlit.app/",
+  "browser": "Microsoft Edge",
+  "model": "v2-large",
+  "evidence_source": "Owner reported two hosted prediction timings and supplied both downloaded PNGs; file signatures, dimensions and header formats inspected without local inference or Python execution.",
+  "prediction_seconds": [
+    23.3,
+    23.45
+  ],
+  "model_preparation_seconds": null,
+  "output_size": [
+    1024,
+    768
+  ],
+  "colour_png": {
+    "file": "colour.png",
+    "bit_depth": 8,
+    "colour_type": 2,
+    "sha256": "f13a1637a7dbc70448028c5c7002007bc219975f7a439f49150a5a785e268d74"
+  },
+  "relative_inverse_depth_png": {
+    "file": "relative_inverse_depth16.png",
+    "bit_depth": 16,
+    "colour_type": 0,
+    "sha256": "0b34ee0e4b8e01faa54a581f6e11b9a67748e5d91411859e2bd8fc06f7317bd5"
+  },
+  "pending": [
+    "Large-to-Small switch and recovery",
+    "Fresh/concurrent-session checks",
+    "Exact runtime commit confirmation",
+    "Large loading time was not supplied"
+  ],
+  "note": "Two successful requests on the supplied example establish a hosted smoke pass; they are not a benchmark or proof of memory feasibility for every allowed upload."
+}

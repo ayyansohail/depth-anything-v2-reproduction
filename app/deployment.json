@@ -10,5 +10,5 @@
     "max_edge": 1024,
     "max_aspect_ratio": 2.0
   },
-  "status": "Small and Base hosted smoke checks passed; Large enabled as actual-host verification candidate; Small remains default"
+  "status": "All three models passed repeated hosted prediction/download smoke checks; final switching and session checks pending; Small default"
 }
