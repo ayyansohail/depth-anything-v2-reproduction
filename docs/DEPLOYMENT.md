@@ -3,7 +3,7 @@
 Branch: **feat/streamlit-deployment**, based on the completed Stage 4 branch at
 5f4c44c4ca4b0ecaaa480ace3f9788f0ba0f6b38. Main and the Stage 4 branch stay unchanged.
 
-Status: Colab checks and all guided hosted functional checks passed for Small, Base and Large. Public app: https://depth-anything-v2-repro.streamlit.app/. See [the acceptance record](../deployment/hosted/ACCEPTANCE.md). The exact deployed-build/Python transcription remains pending. The formal report is deferred.
+Status: Colab checks and all guided hosted functional checks passed for Small, Base and Large. Public app: https://depth-anything-v2-repro.streamlit.app/. See [the acceptance record](../deployment/hosted/ACCEPTANCE.md). **Stage 5 is complete.** Verified runtime: `f2682d589e2157c59653d45acbedbd6e8efd9ef4`, Python **3.13.16**; owner copied these values from About the models. The formal report is deferred.
 
 ## 1 Verify the application in Colab
 
@@ -75,7 +75,7 @@ before loading another. Only image/output bytes and scalar metadata are stored
 in per-user session state. Model weights can remain in the host's disk cache;
 multiple model instances are not deliberately retained in RAM.
 
-`app/deployment.json` currently enables Small, Base and Large, each with successful repeated hosted prediction/download smoke checks. Base-to-Small, Large-to-Small, fresh-session and two-session functional checks passed; the deployed-build record remains pending. Small remains
+`app/deployment.json` currently enables Small, Base and Large, each with successful repeated hosted prediction/download smoke checks. Base-to-Small, Large-to-Small, fresh-session and two-session functional checks passed; the deployed-build record is confirmed in app/hosted_acceptance.json. Small remains
 the default. After a successful Small hosted check, the assistant enables Base
 in a reviewed commit, the owner repeats hosted tests, then Large is tried in
 another reviewed commit. A failing candidate is disabled again. CPU out-of-memory
@@ -126,8 +126,7 @@ installs, tests or inference were executed during source preparation.
 Stage 5 requires a working public URL, hosted verification of every enabled
 model, pinned dependency/startup documentation, a worked example, and a screenshot
 or recording. The implementation alone is not a completed deployment. Current
-acceptance status is recorded in `app/hosted_acceptance.json`; the exact runtime commit stays null
-until confirmed from host records. Keep Streamlit account credentials out of Git.
+acceptance is complete and recorded in `app/hosted_acceptance.json`, including the verified runtime commit and Python version. Keep Streamlit account credentials out of Git.
 
 ## Final session and deployed-build checks
 
@@ -136,3 +135,6 @@ The About the models expander shows the running checkout's full Git commit and P
 In Edge InPrivate, open the public URL without signing in, confirm Small is the default, upload the worked example and complete a prediction. Keep that session open alongside the normal Edge session. Start a Base prediction in normal Edge, then immediately start a Small prediction in InPrivate. Confirm both finish with correct independent model labels and no crash; record whether one showed the waiting message. A successful functional overlap check does not measure host RSS or prove no simultaneous model allocations; lock/release behaviour was tested in Colab.
 
 Return the displayed build ID and Python version, fresh-session success, both-session success and a screenshot including a completed result and About the models.
+
+
+Completed: owner confirmed the fresh-session and overlapping-session checks, then supplied About the models values f2682d589e2157c59653d45acbedbd6e8efd9ef4 / Python 3.13.16. These instructions remain for reproduction; no further acceptance tests are outstanding.

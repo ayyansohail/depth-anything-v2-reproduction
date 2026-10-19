@@ -10,7 +10,7 @@ The work is the evaluation pipeline, the metric code, a paper-specific experimen
 
 **Branch: `feat/streamlit-deployment`. Streamlit Community Cloud, CPU, Small first.**
 
-Colab verification passed **24 tests** and four real CPU predictions. The [public app](https://depth-anything-v2-repro.streamlit.app/) supports **Small (default), Base and Large**. All three passed repeated hosted predictions and both PNG downloads; invalid-upload recovery, switching back to Small, a fresh public session and two-session functional checks also passed. The literal deployed-build record is the remaining administrative item.
+Colab verification passed **24 tests** and four real CPU predictions. The [public app](https://depth-anything-v2-repro.streamlit.app/) supports **Small (default), Base and Large**. All three passed repeated hosted predictions and both PNG downloads; invalid-upload recovery, switching back to Small, a fresh public session and two-session functional checks also passed. **Stage 5 is complete.** Verified runtime build: `f2682d589e2157c59653d45acbedbd6e8efd9ef4`; Python **3.13.16**. Later evidence-only commits preserve the tested prediction code.
 
 See [hosted acceptance and worked example](deployment/hosted/ACCEPTANCE.md), [the saved screenshot](deployment/hosted/small_initial/small_prediction.jpg), and [Colab evidence](deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md). For reproduction, use the [Stage 5 Colab notebook](https://colab.research.google.com/github/ayyansohail/depth-anything-v2-reproduction/blob/feat/streamlit-deployment/notebooks/stage5_deployment_verification.ipynb) and [deployment guide](docs/DEPLOYMENT.md).
 

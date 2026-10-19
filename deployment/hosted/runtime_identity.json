@@ -1,0 +1,10 @@
+{
+  "status": "confirmed",
+  "deployment_build": "f2682d589e2157c59653d45acbedbd6e8efd9ef4",
+  "python": "3.13.16",
+  "public_url": "https://depth-anything-v2-repro.streamlit.app/",
+  "source": "Owner copied the values displayed under About the models after the public UI update.",
+  "confirmation_date_local": "2026-10-19",
+  "timezone": "Asia/Karachi",
+  "note": "This is the runtime commit observed at acceptance. A later evidence/documentation commit can advance the public build without changing prediction code."
+}

@@ -1,14 +1,15 @@
 {
-  "status": "owner_confirmed_functional_session_checks_passed",
+  "status": "owner_confirmed_session_checks_and_runtime_identity_passed",
   "browser": "Microsoft Edge",
   "fresh_session": "Edge InPrivate without sign-in, Small default and successful prediction: owner confirmed yes works.",
   "overlapping_sessions": "Normal Edge Base request followed immediately by InPrivate Small request; both completed with correct model labels and no crash: owner confirmed everything works.",
   "evidence_source": "Owner confirmations in the guided test conversation; these session actions were not operated through browser automation.",
   "waiting_message_observed": null,
-  "deployed_commit": null,
-  "python_runtime": null,
-  "pending": "Independent public UI inspection found the About panel still lacks Deployment build and Python captions; owner reboot/update required before those values can be read.",
+  "deployed_commit": "f2682d589e2157c59653d45acbedbd6e8efd9ef4",
+  "python_runtime": "3.13.16",
+  "pending": null,
   "interpretation": "Functional multi-session check passed. No claim is made that actual process memory or overlap of model allocations was measured.",
   "public_about_panel_build_fields_present": false,
-  "public_about_panel_inspected_utc": "2026-10-19T10:08:00Z"
+  "public_about_panel_inspected_utc": "2026-10-19T10:08:00Z",
+  "subsequent_owner_about_panel_confirmation": "Deployment build: f2682d589e2157c59653d45acbedbd6e8efd9ef4; Python: 3.13.16. This supersedes the earlier public inspection where the captions were absent."
 }

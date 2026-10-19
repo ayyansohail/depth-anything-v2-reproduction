@@ -10,5 +10,5 @@
     "max_edge": 1024,
     "max_aspect_ratio": 2.0
   },
-  "status": "All three models passed guided hosted functional checks; Small default; deployment build record pending"
+  "status": "Stage 5 hosted acceptance complete for Small, Base and Large; Small default"
 }

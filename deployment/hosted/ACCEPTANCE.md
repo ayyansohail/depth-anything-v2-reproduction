@@ -4,7 +4,7 @@ Public app: https://depth-anything-v2-repro.streamlit.app/
 
 Repository: ayyansohail/depth-anything-v2-reproduction. Branch: feat/streamlit-deployment. Entrypoint: app/streamlit_app.py. Python selection: 3.13. Small is the default; Small, Base and Large are enabled.
 
-Status: all guided functional checks passed; exact deployed commit and displayed Python values are awaiting transcription from About the models. The acceptance metadata remains explicit about this outstanding record instead of treating the current branch tip as runtime proof.
+Status: **Stage 5 complete**, accepted on 2026-10-19 (Asia/Karachi). All guided functional checks passed. The owner copied the actual About the models values: deployment build `f2682d589e2157c59653d45acbedbd6e8efd9ef4`, Python **3.13.16**. The complete structured record is in ../../app/hosted_acceptance.json.
 
 ## Evidence and observed behaviour
 
@@ -45,6 +45,6 @@ Small is Apache-2.0; Base/Large are CC-BY-NC-4.0. Team attribution and repositor
 
 ## Source identity
 
-The host displays its current Git revision and Python version under About the models. The build-display change was introduced at e838e27fec6f4c9ec77902f77965287bf6640419. That source commit is not independently established as the actual runtime commit until the displayed values are returned. Later evidence-only commits do not rerun or recreate earlier tests.
+The host displays its current Git revision and Python version under About the models. The build-display change was introduced at e838e27fec6f4c9ec77902f77965287bf6640419. The owner subsequently confirmed the displayed runtime build was **f2682d589e2157c59653d45acbedbd6e8efd9ef4** with Python **3.13.16**; see runtime_identity.json. This replaced the earlier unknown-build status. The acceptance-record commit follows that verified build and changes evidence/documentation/status only; prediction source is unchanged. Later evidence-only commits do not rerun or recreate earlier tests.
 
 ![Hosted Small worked example](small_initial/small_prediction.jpg)

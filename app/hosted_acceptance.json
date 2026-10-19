@@ -1,7 +1,7 @@
 {
-  "status": "functional_acceptance_passed_pending_build_record",
+  "status": "complete",
   "public_url": "https://depth-anything-v2-repro.streamlit.app/",
-  "deployed_commit": null,
+  "deployed_commit": "f2682d589e2157c59653d45acbedbd6e8efd9ef4",
   "host": "Streamlit Community Cloud",
   "python": "3.13",
   "enabled_models": [
@@ -16,7 +16,7 @@
   ],
   "worked_example": "deployment/reviewed/stage5_verification_20261018T202743076758Z/real_predictions/1_v2-small_input_png.png",
   "screenshot_or_recording": "deployment/hosted/small_initial/small_prediction.jpg",
-  "notes": "Hosted functional acceptance passed: public access; Small/Base/Large repeated predictions and downloads; invalid-upload rejection/recovery; Base-to-Small and Large-to-Small switching; owner-confirmed Edge InPrivate fresh prediction and two overlapping Edge sessions completing with correct labels. Download header inspection confirmed all supplied files at 1024x768, RGB 8-bit colour or grayscale 16-bit relative inverse depth. Exact running commit and literal Python values from About the models remain to be copied into the deployment record. No local inference or tests were run.",
+  "notes": "Stage 5 acceptance complete. Small/Base/Large passed repeated hosted predictions and both PNG downloads; Small invalid-upload rejection/recovery, switching back from Base and Large, fresh public Edge InPrivate prediction and owner-confirmed overlapping Edge sessions all passed. Worked example, downloaded outputs and hosted screenshot are saved. Owner confirmed About the models build f2682d589e2157c59653d45acbedbd6e8efd9ef4 and Python 3.13.16. Subsequent final evidence/documentation commits do not change prediction code. Formal report editing remains deferred; no local inference or tests were executed.",
   "colab_evidence": "deployment/reviewed/stage5_verification_20261018T202743076758Z/REVIEW.md",
   "colab_execution_commit": "dedcdd309d1282c40f30d7e0a2ed759632a4a9bf",
   "hosted_evidence": "deployment/hosted/small_initial/verification.json",
@@ -25,5 +25,8 @@
   "base_evidence": "deployment/hosted/edge_base/verification.json",
   "large_evidence": "deployment/hosted/edge_large/verification.json",
   "session_evidence": "deployment/hosted/final_sessions.json",
-  "acceptance_review": "deployment/hosted/ACCEPTANCE.md"
+  "acceptance_review": "deployment/hosted/ACCEPTANCE.md",
+  "python_runtime": "3.13.16",
+  "runtime_identity_evidence": "deployment/hosted/runtime_identity.json",
+  "acceptance_date_local": "2026-10-19"
 }
